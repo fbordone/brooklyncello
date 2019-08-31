@@ -1,3 +1,8 @@
+// Import CSS (useful when running dev server)
+// These will automatically be moved into separate CSS files when running `yarn run build`
+import '../styles/main.scss';
+import '../styles/fonts.scss';
+
 // import external dependencies
 import 'jquery';
 

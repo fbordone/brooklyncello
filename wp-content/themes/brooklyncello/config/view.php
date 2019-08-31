@@ -29,7 +29,9 @@ return [
     |
     */
 
-    'compiled' => wp_upload_dir()['basedir'].'/cache',
+    // this file path allows for us to successfully compile assets within WPEngine's server environment
+    // the original `wp-content/uploads/` directory is prohibited, due to denied permissions by WPE's security protocol
+    'compiled' => '/tmp/brooklyncello/blade-cache',
 
 
     /*

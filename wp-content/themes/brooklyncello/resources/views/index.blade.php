@@ -1,18 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
 
   @if (!have_posts())
     <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
+      {{ __('Sorry, no results were found.', 'brooklyncello') }}
     </div>
-    {!! get_search_form(false) !!}
   @endif
 
   @while (have_posts()) @php the_post() @endphp
-    @include('partials.content-'.get_post_type())
+    <h1>{{ the_title() }}</h1>
+    <p>{{ the_content() }}</p>
   @endwhile
 
-  {!! get_the_posts_navigation() !!}
 @endsection

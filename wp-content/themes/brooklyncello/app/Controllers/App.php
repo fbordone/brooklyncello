@@ -4,30 +4,20 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class App extends Controller
-{
-    public function siteName()
-    {
-        return get_bloginfo('name');
-    }
+class App extends Controller {
+    /**
+     * Find path to spritemap if it exists
+     *
+     * @uses config()
+     * @see  `../../../app/helpers.php`
+     */
+    public function sprite_path() {
+        $_theme_path = \App\config('theme.dir');
+        $_spritemap = glob("{$_theme_path}/dist/spritemap*.svg");
 
-    public static function title()
-    {
-        if (is_home()) {
-            if ($home = get_option('page_for_posts', true)) {
-                return get_the_title($home);
-            }
-            return __('Latest Posts', 'sage');
-        }
-        if (is_archive()) {
-            return get_the_archive_title();
-        }
-        if (is_search()) {
-            return sprintf(__('Search Results for %s', 'sage'), get_search_query());
-        }
-        if (is_404()) {
-            return __('Not Found', 'sage');
-        }
-        return get_the_title();
+        if ( !empty($_spritemap) && file_exists($_spritemap[0]) )
+            return $_spritemap[0];
+
+        return false;
     }
 }

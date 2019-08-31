@@ -4,8 +4,8 @@
       "./scripts/main.js",
       "./styles/main.scss"
     ],
-    "customizer": [
-      "./scripts/customizer.js"
+    "fonts": [
+      "./styles/fonts.scss"
     ]
   },
   "publicPath": "/wp-content/themes/brooklyncello",

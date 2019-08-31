@@ -3,6 +3,19 @@
 namespace App;
 
 /**
+ * Hook into wp_head() function
+ */
+add_filter('wp_head', function (){
+    // remove `no-js` class ?>
+    <script>
+      if ( document.documentElement.classList.contains('no-js') ){
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+      }
+    </script>
+<?php });
+
+/**
  * Add <body> classes
  */
 add_filter('body_class', function (array $classes) {
@@ -11,11 +24,6 @@ add_filter('body_class', function (array $classes) {
         if (!in_array(basename(get_permalink()), $classes)) {
             $classes[] = basename(get_permalink());
         }
-    }
-
-    /** Add class if sidebar is active */
-    if (display_sidebar()) {
-        $classes[] = 'sidebar-primary';
     }
 
     /** Clean up class names for custom templates */
@@ -30,7 +38,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'brooklyncello') . '</a>';
 });
 
 /**
@@ -67,25 +75,30 @@ add_filter('template_include', function ($template) {
 }, PHP_INT_MAX);
 
 /**
- * Render comments.blade.php
+ * Define ACF JSON save point
  */
-add_filter('comments_template', function ($comments_template) {
-    $comments_template = str_replace(
-        [get_stylesheet_directory(), get_template_directory()],
-        '',
-        $comments_template
-    );
+add_filter('acf/settings/save_json', function ( $path ) {
+    // update path
+    $path = config('theme.dir') .'/resources/assets/acf-json';
+    // return
+    return $path;
+});
 
-    $data = collect(get_body_class())->reduce(function ($data, $class) use ($comments_template) {
-        return apply_filters("sage/template/{$class}/data", $data, $comments_template);
-    }, []);
+/**
+ * Define ACF JSON load point
+ */
+add_filter('acf/settings/load_json', function ( $paths ) {
+    // remove original path (optional)
+    unset($paths[0]);
+    // append path
+    $paths[] = config('theme.dir') .'/resources/assets/acf-json';
+    // return
+    return $paths;
+});
 
-    $theme_template = locate_template(["views/{$comments_template}", $comments_template]);
-
-    if ($theme_template) {
-        echo template($theme_template, $data);
-        return get_stylesheet_directory().'/index.php';
-    }
-
-    return $comments_template;
-}, 100);
+/**
+ * Remove max-width limit for images within the srcset attribute
+ */
+add_filter('max_srcset_image_width', function ( $max_width ){
+    return false;
+});

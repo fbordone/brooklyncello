@@ -2,7 +2,9 @@ module.exports = {
   'extends': 'stylelint-config-standard',
   'rules': {
     'no-empty-source': null,
-    'string-quotes': 'double',
+    'declaration-empty-line-before': null,
+    'at-rule-empty-line-before': null,
+    'string-quotes': null,
     'at-rule-no-unknown': [
       true,
       {

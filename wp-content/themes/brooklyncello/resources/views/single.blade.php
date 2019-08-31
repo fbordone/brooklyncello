@@ -2,6 +2,7 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
+    <h1>{{ the_title() }}</h1>
+    <p>{{ the_content() }}</p>
   @endwhile
 @endsection

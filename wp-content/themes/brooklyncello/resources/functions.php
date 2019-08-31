@@ -13,8 +13,8 @@ use Roots\Sage\Container;
  * @param string $subtitle
  * @param string $title
  */
-$sage_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Sage &rsaquo; Error', 'sage');
+$theme_error = function ($message, $subtitle = '', $title = '') {
+    $title = $title ?: __('Theme &rsaquo; Error', 'brooklyncello');
     $footer = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
     $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
     wp_die($message, $title);
@@ -24,14 +24,14 @@ $sage_error = function ($message, $subtitle = '', $title = '') {
  * Ensure compatible version of PHP is used
  */
 if (version_compare('7.1', phpversion(), '>=')) {
-    $sage_error(__('You must be using PHP 7.1 or greater.', 'sage'), __('Invalid PHP version', 'sage'));
+    $theme_error(__('You must be using PHP 7.1 or greater.', 'brooklyncello'), __('Invalid PHP version', 'brooklyncello'));
 }
 
 /**
  * Ensure compatible version of WordPress is used
  */
 if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
-    $sage_error(__('You must be using WordPress 4.7.0 or greater.', 'sage'), __('Invalid WordPress version', 'sage'));
+    $theme_error(__('You must be using WordPress 4.7.0 or greater.', 'brooklyncello'), __('Invalid WordPress version', 'brooklyncello'));
 }
 
 /**
@@ -39,9 +39,9 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
  */
 if (!class_exists('Roots\\Sage\\Container')) {
     if (!file_exists($composer = __DIR__.'/../vendor/autoload.php')) {
-        $sage_error(
-            __('You must run <code>composer install</code> from the Sage directory.', 'sage'),
-            __('Autoloader not found.', 'sage')
+        $theme_error(
+            __('You must run <code>composer install</code> from the Sage directory.', 'brooklyncello'),
+            __('Autoloader not found.', 'brooklyncello')
         );
     }
     require_once $composer;
@@ -53,12 +53,12 @@ if (!class_exists('Roots\\Sage\\Container')) {
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
-array_map(function ($file) use ($sage_error) {
+array_map(function ($file) use ($theme_error) {
     $file = "../app/{$file}.php";
     if (!locate_template($file, true, true)) {
-        $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
+        $theme_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'brooklyncello'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'filters']);
 
 /**
  * Here's what's happening with these hooks:
