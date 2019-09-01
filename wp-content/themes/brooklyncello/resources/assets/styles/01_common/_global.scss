@@ -48,7 +48,7 @@ body {
   color: c(black);
 
   // once custom font is loaded asynchronously
-  .wf-tradegothic-n4-active & {
+  .wf-nunito-n4-active & {
     @include font-family((type: default, weight: normal));
   }
 }

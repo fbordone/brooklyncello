@@ -44,14 +44,13 @@ $colors: (
  */
 $fonts: (
   default: (
-    family: 'Trade Gothic',
+    family: 'Nunito',
     fallbacks: "Helvetica Neue, Helvetica, sans-serif",
     styles: (
       normal: normal,
     ),
     weights: (
-      normal: 400,
-      bold: 700,
+      normal: 400
     ),
   ),
   headings: (

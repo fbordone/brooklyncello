@@ -24,6 +24,9 @@ export default {
         families: ['Built Titling:n4'],
         urls: [BROOKLYNCELLO.theme_fonts], // eslint-disable-line no-undef
       },
+      google: {
+        families: ['Nunito'],
+      },
       timeout: 3000,
     });
   },
