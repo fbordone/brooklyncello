@@ -12,10 +12,8 @@ $_heading-line-height: 1.2; // keep this value unitless
 
 /************ Placeholder selector for setting defaults ************/
 %heading {
+  @include font-family((type: headings, style: normal, weight: normal)); // make sure `_font-family.scss` is imported before this call
   margin: 0;
-  // hardcode the `font-family` attribute here as the `@font-family` mixin may or may not be available at this point
-
-  // font-family: 'Portsmouth', 'Times New Roman', 'Times', serif;
   line-height: $_heading-line-height;
 }
 

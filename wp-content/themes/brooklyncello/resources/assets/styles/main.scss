@@ -28,12 +28,15 @@
 @import "02_functions/_z-index";
 
 /* UTILITY MIXINS */
+// `font-family()` and `transition()` mixins need to be loaded first so they could be used by other mixins
+@import "03_mixins/_font-family";
+@import "03_mixins/_transition";
+
 @import "03_mixins/_absolute-center";
 @import "03_mixins/_button";
 @import "03_mixins/_clearfix";
 @import "03_mixins/_container";
 @import "03_mixins/_flexbox";
-@import "03_mixins/_font-family";
 @import "03_mixins/_grid-row";
 @import "03_mixins/_headings";
 @import "03_mixins/_images";
@@ -41,7 +44,6 @@
 @import "03_mixins/_media-queries";
 @import "03_mixins/_position";
 @import "03_mixins/_screen-reader";
-@import "03_mixins/_transition";
 @import "03_mixins/_visibility";
 
 /* GLOBALS / DEFAULTS / RESETS */

@@ -17,21 +17,18 @@
  */
 $colors: (
   white: (
-    light: #fff,
-    base: darken(#fff, 10%),
-    dark: desaturate(#fff, 10%),
-  ),
-  blue: (
-    base: #264a70,
-    dark: #061730,
-  ),
-  gold: (
-    light: #d79c6a,
-    base: #d3923b,
-    dark: #976f4e,
+    base: #fff,
   ),
   black: (
-    base: #4a4a4a,
+    base: #000,
+  ),
+  gray: (
+    light: #f5f5f5,
+    base: #959595,
+  ),
+  red: (
+    base: #f0a693,
+    dark: #c86c60,
   ),
 );
 
@@ -58,8 +55,8 @@ $fonts: (
     ),
   ),
   headings: (
-    family: 'Portsmouth',
-    fallbacks: "Times New Roman, Times, serif",
+    family: 'Built Titling',
+    fallbacks: "Helvetica Neue, Helvetica, sans-serif",
     styles: (
       normal: normal,
     ),

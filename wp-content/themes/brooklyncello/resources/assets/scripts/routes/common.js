@@ -1,5 +1,5 @@
 import picturefill from 'picturefill';
-// import webFont from 'webfontloader';
+import webFont from 'webfontloader';
 
 export default {
   init() {
@@ -19,13 +19,13 @@ export default {
     // `webFont` is the arbitrary name we've assigned to the 'import' statement
     // @see https://www.npmjs.com/package/webfontloader
     // @see `../../../../app/setup.php` for the globally defined `BROOKLYNCELLO` JS object
-    // webFont.load({
-    //   custom: {
-    //     families: [''],
-    //     urls: [BROOKLYNCELLO.theme_fonts], // eslint-disable-line no-undef
-    //   },
-    //   timeout: 3000,
-    // });
+    webFont.load({
+      custom: {
+        families: ['Built Titling:n4'],
+        urls: [BROOKLYNCELLO.theme_fonts], // eslint-disable-line no-undef
+      },
+      timeout: 3000,
+    });
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
