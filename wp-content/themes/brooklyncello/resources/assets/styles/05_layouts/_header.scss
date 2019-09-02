@@ -3,3 +3,101 @@
 // HEADER/NAVIGATION STYLES
 
 ================================================================================================= */
+
+/************* Internal variables ************/
+$_banner-height: 75px;
+
+/************* General styles ************/
+.banner {
+  @include position(fixed, (top: 0, left: 0));
+  height: em($_banner-height);
+  z-index: z(nav);
+  width: 100%;
+}
+
+.banner__wrap {
+  @include container;
+  @include flex-container;
+  @include transition;
+  background-color: c(beige);
+  height: 100%;
+
+  &--active-mobile-menu {
+    @include transition;
+    background-color: c(red);
+
+    @include min-width($_tablet-800px-breakpoint) {
+      @include transition;
+      background-color: c(beige);
+    }
+  }
+}
+
+.banner__link {
+  height: 100%;
+  margin-top: em(10);
+}
+
+.banner__menu-btn {
+  background-color: transparent;
+  padding: 0;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    @include transition;
+    @include hide;
+  }
+}
+
+.banner__nav-header-mobile {
+  @include position(fixed, (top: $_banner-height, right: 0, left: 0));
+  @include transition;
+  background-color: c(beige);
+  z-index: z(abyss);
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+
+  &::before {
+    content: '';
+    @include position(absolute, (top: 0, right: -15px, bottom: 0, left: 0));
+    @include transition;
+    background-color: c(red);
+    transform: skew(-14deg) translateX(-120%);
+    transform-origin: top left;
+  }
+
+  &--show {
+    z-index: z(hidden);
+    opacity: 1;
+    height: calc(100vh - #{em($_banner-height)});
+    overflow: scroll;
+
+    &::before {
+      transform: skew(-14deg) translateX(0);
+    }
+  }
+
+  @include min-width($_tablet-800px-breakpoint) {
+    @include transition;
+    @include hide;
+  }
+}
+
+.nav-header--mobile {
+  &:first-child {
+    margin-top: em(50);
+  }
+
+  .menu-item {
+    font-size: em($font-size-base);
+    padding: em(25, $font-size-base);
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @include min-width($_mobile-640px-breakpoint) {
+      font-size: em(22);
+      padding: em(25, 22);
+    }
+  }
+}

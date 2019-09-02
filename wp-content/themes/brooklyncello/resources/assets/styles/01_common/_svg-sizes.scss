@@ -25,6 +25,16 @@ svg.icon {
   max-width: 100%;
   height: auto;
 
-  // add icons here
-  // &.logo {}
+  // Brooklyncello logo
+  &.logo-brooklyncello {
+    width: em(65);
+    height: em(65);
+  }
+
+  // Brooklyncello logo
+  &.icon-menu,
+  &.icon-menu-close {
+    width: em(40);
+    height: em(40);
+  }
 }

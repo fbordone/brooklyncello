@@ -25,15 +25,69 @@ export default {
         urls: [BROOKLYNCELLO.theme_fonts], // eslint-disable-line no-undef
       },
       google: {
-        families: ['Nunito'],
+        families: ['Nunito', 'Nunito:700'],
       },
       timeout: 3000,
     });
+
+    // handle mobile nav listener
+    const bannerWrap = document.querySelector('.banner__wrap');
+    const icon = document.querySelector('.icon-menu use');
+    const mobileNav = document.querySelector('.banner__nav-header-mobile');
+    const navBtn = document.querySelector('.banner__menu-btn');
+    if (navBtn) {
+      navBtn.addEventListener('click', handleToggleMenu.bind(navBtn, bannerWrap, icon, mobileNav), {passive: true});
+    }
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
   },
 };
+
+/*
+ * Mobile menu toggle
+ *
+ * @name handleToggleMenu
+ * @desc show/hide mobile nav
+ */
+function handleToggleMenu(bannerWrap, icon, mobileNav) {
+  // Toggle menu icon based on href attribute value
+  if (icon.getAttribute('href') === '#icon-menu') {
+    icon.setAttribute('href', '#icon-menu-close');
+    icon.setAttribute('xlink:href', '#icon-menu-close');
+  } else {
+    icon.setAttribute('href', '#icon-menu');
+    icon.setAttribute('xlink:href', '#icon-menu');
+  }
+
+  // Toggle banner wrap modifier
+  bannerWrap.classList.toggle('banner__wrap--active-mobile-menu');
+
+  // Toggle mobile nav menu
+  mobileNav.classList.toggle('banner__nav-header-mobile--show');
+
+  // Disable body scroll beneath nav when nav is showing
+  if (mobileNav.classList.contains('banner__nav-header-mobile--show')) {
+    disableBodyScroll(true);
+  } else {
+    disableBodyScroll(false);
+  }
+}
+
+/**
+ * Function to control body scrolling
+ * @param {Boolean} $disable  Whether to disable body scrolling or not
+ */
+function disableBodyScroll( $disable ) {
+  if ( $disable ) {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  else {
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
+  }
+}
 
 /**
  * Adds a body class for styling focus elements (specific to keyboard users)
