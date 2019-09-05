@@ -5,14 +5,21 @@
 ================================================================================================= */
 
 /************* Internal variables ************/
-$_banner-height: 75px;
+$_banner-height--mobile: 75px;
+$_banner-height--desktop: 90px;
 
 /************* General styles ************/
 .banner {
   @include position(fixed, (top: 0, left: 0));
-  height: em($_banner-height);
+  @include transition;
+  height: em($_banner-height--mobile);
   z-index: z(nav);
   width: 100%;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    @include transition;
+    height: em($_banner-height--desktop);
+  }
 }
 
 .banner__wrap {
@@ -31,11 +38,32 @@ $_banner-height: 75px;
       background-color: c(beige);
     }
   }
+
+  @include min-width($_tablet-800px-breakpoint) {
+    justify-content: center;
+  }
 }
 
 .banner__link {
   height: 100%;
   margin-top: em(10);
+
+  &--mobile {
+    @include show;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      @include hide;
+    }
+  }
+
+  &--desktop {
+    @include hide;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      @include show;
+      margin-top: em(12);
+    }
+  }
 }
 
 .banner__menu-btn {
@@ -43,13 +71,13 @@ $_banner-height: 75px;
   padding: 0;
 
   @include min-width($_tablet-800px-breakpoint) {
-    @include transition;
     @include hide;
+    @include transition;
   }
 }
 
 .banner__nav-header-mobile {
-  @include position(fixed, (top: $_banner-height, right: 0, left: 0));
+  @include position(fixed, (top: $_banner-height--mobile, right: 0, left: 0));
   @include transition;
   background-color: c(beige);
   z-index: z(abyss);
@@ -70,7 +98,7 @@ $_banner-height: 75px;
   &--show {
     z-index: z(hidden);
     opacity: 1;
-    height: calc(100vh - #{em($_banner-height)});
+    height: calc(100vh - #{em($_banner-height--mobile)});
     overflow: scroll;
 
     &::before {
@@ -79,25 +107,60 @@ $_banner-height: 75px;
   }
 
   @include min-width($_tablet-800px-breakpoint) {
-    @include transition;
     @include hide;
+    @include transition;
+  }
+
+  .nav-header--mobile {
+    &:first-child {
+      margin-top: em(50);
+    }
+
+    .menu-item {
+      font-size: em($font-size-base);
+      padding: em(25, $font-size-base);
+      text-transform: uppercase;
+      font-weight: bold;
+
+      @include min-width($_mobile-640px-breakpoint) {
+        font-size: em(22);
+        padding: em(25, 22);
+      }
+    }
   }
 }
 
-.nav-header--mobile {
-  &:first-child {
-    margin-top: em(50);
+.banner__nav-header-desktop {
+  @include hide;
+  @include transition;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    @include flex-container((justify: space-around));
+    @include transition;
+    width: 100%;
   }
 
-  .menu-item {
-    font-size: em($font-size-base);
-    padding: em(25, $font-size-base);
-    text-transform: uppercase;
-    font-weight: bold;
+  @include min-width($_tablet-960px-breakpoint) {
+    max-width: em(1120);
+  }
 
-    @include min-width($_mobile-640px-breakpoint) {
-      font-size: em(22);
-      padding: em(25, 22);
+  .nav-header--desktop {
+    @include flex-container;
+
+    .menu-item {
+      &:not(:first-child) {
+        margin-left: em(50, 16);
+
+        @include min-width($_tablet-960px-breakpoint) {
+          margin-left: em(100, 16);
+        }
+      }
+
+      > a {
+        font-size: em(16);
+        letter-spacing: em(1, 16);
+        text-transform: uppercase;
+      }
     }
   }
 }
