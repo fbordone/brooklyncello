@@ -51,6 +51,9 @@ body {
   // once custom font is loaded asynchronously
   .wf-nunito-n4-active & {
     @include font-family((type: default, weight: normal));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 
