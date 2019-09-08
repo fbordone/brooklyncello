@@ -190,3 +190,9 @@ body.user-is-tabbing *:focus {
 [aria-hidden="false"] {
   @include show;
 }
+
+/************ Global Wrap ************/
+.wrap {
+  @include container((gutter: 0));
+  background-color: c(white);
+}

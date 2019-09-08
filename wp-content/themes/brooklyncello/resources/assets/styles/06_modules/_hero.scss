@@ -1,0 +1,47 @@
+/* ==============================================================================================
+
+// HERO STYLES
+
+================================================================================================= */
+.hero__img-wrap {
+  @include absolute-center((ratio: 100%, childElem: 'picture'));
+  width: 100%;
+
+  @include min-width($_mobile-480px-breakpoint) {
+    padding-bottom: 85%;
+  }
+
+  @include min-width($_tablet-800px-breakpoint) {
+    padding-bottom: 70%;
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-bottom: 38%;
+  }
+}
+
+.hero__content-wrap {
+  @include position(absolute, (top: 50%, left: 50%));
+  transform: translate(-50%, -50%);
+  padding-right: em($container-gutter);
+  padding-left: em($container-gutter);
+  text-align: center;
+  width: 100%;
+}
+
+.hero__title {
+  color: white;
+  font-weight: bold;
+  font-size: em(32);
+  letter-spacing: em(1, 32);
+
+  @include min-width($_mobile-480px-breakpoint) {
+    font-size: em($font-size-h1);
+    letter-spacing: em(1, $font-size-h1);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em(72);
+    letter-spacing: em(1, 72);
+  }
+}
