@@ -11,13 +11,11 @@ $_banner-height--desktop: 90px;
 /************* General styles ************/
 .banner {
   @include position(fixed, (top: 0, left: 0));
-  @include transition;
   height: em($_banner-height--mobile);
   z-index: z(nav);
   width: 100%;
 
   @include min-width($_tablet-800px-breakpoint) {
-    @include transition;
     height: em($_banner-height--desktop);
   }
 }
@@ -34,8 +32,6 @@ $_banner-height--desktop: 90px;
 .banner__wrap {
   @include container;
   @include flex-container;
-  @include transition;
-  background-color: c(beige);
   height: 100%;
 
   &--active-mobile-menu {
@@ -44,7 +40,7 @@ $_banner-height--desktop: 90px;
 
     @include min-width($_tablet-800px-breakpoint) {
       @include transition;
-      background-color: c(beige);
+      background-color: c(white);
     }
   }
 
@@ -88,7 +84,7 @@ $_banner-height--desktop: 90px;
 .banner__nav-header-mobile {
   @include position(fixed, (top: $_banner-height--mobile, right: 0, left: 0));
   @include transition;
-  background-color: c(beige);
+  background-color: c(white);
   z-index: z(abyss);
   opacity: 0;
   height: 0;
@@ -141,11 +137,9 @@ $_banner-height--desktop: 90px;
 
 .banner__nav-header-desktop {
   @include hide;
-  @include transition;
 
   @include min-width($_tablet-800px-breakpoint) {
     @include flex-container((justify: space-around));
-    @include transition;
     width: 100%;
   }
 
