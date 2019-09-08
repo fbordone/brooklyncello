@@ -1,0 +1,91 @@
+{
+    "key": "group_5d71d3389f2e3",
+    "title": "Module - Hero",
+    "fields": [
+        {
+            "key": "field_5d71d34bd8555",
+            "label": "Title",
+            "name": "hero__title",
+            "type": "text",
+            "instructions": "Set the hero title that will display over the image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d71d585f1f46",
+            "label": "Mobile Image",
+            "name": "hero__mobile_img",
+            "type": "image",
+            "instructions": "Upload a <strong>mobile<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x960px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5d71d60c82699",
+            "label": "Desktop Image",
+            "name": "hero__desktop_img",
+            "type": "image",
+            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1440x550px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1567970978
+}

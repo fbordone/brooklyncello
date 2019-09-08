@@ -22,6 +22,15 @@ $_banner-height--desktop: 90px;
   }
 }
 
+/* Make sure body content accounts for fixed header */
+.banner + .wrap {
+  padding-top: em($_banner-height--mobile);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    padding-top: em($_banner-height--desktop);
+  }
+}
+
 .banner__wrap {
   @include container;
   @include flex-container;
