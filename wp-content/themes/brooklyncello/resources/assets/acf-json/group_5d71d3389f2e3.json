@@ -26,7 +26,7 @@
             "label": "Mobile Image",
             "name": "hero__mobile_img",
             "type": "image",
-            "instructions": "Upload a <strong>mobile<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x1500px<\/strong>",
+            "instructions": "Upload a <strong>mobile<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x960px<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -50,7 +50,7 @@
             "label": "Desktop Image",
             "name": "hero__desktop_img",
             "type": "image",
-            "instructions": "Upload a <strong>desktop<\/strong> optimized fallback image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1920x1220px<\/strong>",
+            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1440x550px<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -87,5 +87,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1567741784
+    "modified": 1567970978
 }
