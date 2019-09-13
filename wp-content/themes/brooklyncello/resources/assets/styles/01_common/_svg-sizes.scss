@@ -37,4 +37,26 @@ svg.icon {
     width: em(40);
     height: em(40);
   }
+
+  // social icons
+  &.icon-instagram,
+  &.icon-facebook,
+  &.icon-twitter {
+    height: em(25);
+    fill: c(white);
+  }
+
+  // define custom widths for social icons
+  // calculated via ( [svg height] * [shared height] / [svg width] )
+  &.icon-instagram {
+    width: em(25);
+  }
+
+  &.icon-facebook {
+    width: em(14);
+  }
+
+  &.icon-twitter {
+    width: em(31);
+  }
 }

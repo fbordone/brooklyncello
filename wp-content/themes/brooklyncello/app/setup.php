@@ -52,6 +52,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'nav_header_left' => __('Left Header Navigation Menu', 'brooklyncello'),
         'nav_header_right' => __('Right Header Navigation Menu', 'brooklyncello'),
+        'nav_footer' => __('Footer Navigation Menu', 'brooklyncello'),
     ]);
 
     /**
