@@ -1,0 +1,24 @@
+/* ==============================================================================================
+// SOCIAL ICONS STYLINGS
+================================================================================================= */
+
+.social-icons {
+  @include flex-container((justify: center));
+  margin-top: em(30);
+}
+
+.social-icons__item {
+  border: em(1) solid c(white);
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 3.2;
+
+  &:not(:first-child) {
+    margin-left: em(25);
+
+    @include min-width($_tablet-800px-breakpoint) {
+      margin-left: em(35);
+    }
+  }
+}

@@ -75,6 +75,22 @@ add_filter('template_include', function ($template) {
 }, PHP_INT_MAX);
 
 /**
+ * Add ACF Theme Options Page
+ */
+add_action('init', function () {
+    if( function_exists('acf_add_options_page') ) {
+        acf_add_options_page([
+            'page_title'    => __('Brooklyncello Theme Options', 'brooklyncello'),
+            'menu_title'    => __('Brooklyncello Options', 'brooklyncello'),
+            'menu_slug'     => 'brooklyncello-theme-options',
+            'parent_slug'   => 'options-general.php',
+            'redirect'      => false,
+            'autoload'      => true,
+        ]);
+    }
+});
+
+/**
  * Define ACF JSON save point
  */
 add_filter('acf/settings/save_json', function ( $path ) {
