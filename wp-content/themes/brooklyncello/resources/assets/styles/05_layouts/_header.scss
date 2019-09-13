@@ -5,8 +5,8 @@
 ================================================================================================= */
 
 /************* Internal variables ************/
-$_banner-height--mobile: 75px;
-$_banner-height--desktop: 90px;
+$_banner-height--mobile: 80px;
+$_banner-height--desktop: 100px;
 
 /************* General styles ************/
 .banner {
@@ -14,6 +14,7 @@ $_banner-height--desktop: 90px;
   height: em($_banner-height--mobile);
   z-index: z(nav);
   width: 100%;
+  background-color: white;
 
   @include min-width($_tablet-800px-breakpoint) {
     height: em($_banner-height--desktop);
@@ -33,6 +34,11 @@ $_banner-height--desktop: 90px;
   @include container;
   @include flex-container;
   height: 100%;
+  padding-top: em(6.5);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    padding-top: em(2);
+  }
 
   &--active-mobile-menu {
     @include transition;
@@ -163,6 +169,7 @@ $_banner-height--desktop: 90px;
         font-size: em(16);
         letter-spacing: em(1, 16);
         text-transform: uppercase;
+        font-weight: bold;
       }
     }
   }

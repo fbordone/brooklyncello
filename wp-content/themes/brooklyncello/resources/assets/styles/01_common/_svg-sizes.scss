@@ -27,8 +27,13 @@ svg.icon {
 
   // Brooklyncello logo
   &.logo-brooklyncello {
-    width: em(65);
-    height: em(65);
+    width: em(60);
+    height: em(60);
+
+    @include min-width($_tablet-800px-breakpoint) {
+      width: em(65);
+      height: em(65);
+    }
   }
 
   // Brooklyncello logo
