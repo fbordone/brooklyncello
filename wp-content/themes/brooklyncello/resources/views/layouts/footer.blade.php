@@ -22,7 +22,7 @@
         <a class="footer__legal-item-link" href="{{ home_url('/privacy-policy/') }}">{{ __('Privacy Policy', 'brooklyncello') }}</a>
       </li>
       <li class="footer__legal-item">
-        <a class="footer__legal-item-link footer__legal-item-link--last" href="{{ home_url('/terms-and-conditions/') }}">{{ __('Contact', 'brooklyncello') }}</a>
+        <a class="footer__legal-item-link footer__legal-item-link--last" href="https://responsibility.org/" target="_blank">{{ __('Responsibility', 'brooklyncello') }}</a>
       </li>
     </ul>
   </div>

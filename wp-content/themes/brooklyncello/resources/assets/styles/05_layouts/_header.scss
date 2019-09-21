@@ -150,7 +150,7 @@ $_banner-height--desktop: 100px;
   }
 
   @include min-width($_tablet-960px-breakpoint) {
-    max-width: em(1120);
+    max-width: em(960);
   }
 
   .nav-header--desktop {

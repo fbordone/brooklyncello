@@ -7,7 +7,7 @@
   @include container;
   @include flex-container((direction: column, justify: center));
   background-color: c(red);
-  color: c(black);
+  color: c(white);
   padding: em($container-gutter*2);
 
   @include min-width($_tablet-800px-breakpoint) {
@@ -31,14 +31,10 @@
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
+      color: c(black);
 
       @include min-width($_tablet-800px-breakpoint) {
-        margin: 0 em(15, 16);
-      }
-
-      @include min-width($_tablet-960px-breakpoint) {
-        margin-left: em(20, 16);
-        margin-right: em(20, 16);
+        margin: 0 em(30, 16);
       }
     }
   }
@@ -52,6 +48,7 @@
   font-weight: bold;
   text-align: center;
   opacity: 0.75;
+  color: c(black);
 }
 
 .footer__legal-list {
