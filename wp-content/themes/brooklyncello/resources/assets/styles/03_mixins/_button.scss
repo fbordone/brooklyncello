@@ -59,4 +59,7 @@
   overflow: hidden;
   border: none;
   border-radius: 0;
+
+  // allow overrides
+  @content;
 }

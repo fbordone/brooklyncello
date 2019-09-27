@@ -24,6 +24,7 @@ $_banner-height--desktop: 100px;
 /* Make sure body content accounts for fixed header */
 .banner + .wrap {
   padding-top: em($_banner-height--mobile);
+  background-color: c(gray, light);
 
   @include min-width($_tablet-800px-breakpoint) {
     padding-top: em($_banner-height--desktop);
