@@ -96,6 +96,44 @@ add_action('after_setup_theme', function () {
 }, 20);
 
 /**
+ * Register custom post types & taxonomies
+ * @link https://codex.wordpress.org/Function_Reference/register_post_type
+ * @link https://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+add_action('init', function() {
+    /************ CPTs ************/
+    /* Recipes */
+    $args = [
+        'labels' => [
+            'name' => __('Recipes', 'brooklyncello'),
+            'singular_name' => __('Recipe', 'brooklyncello'),
+            'add_new_item' => __('Add New Recipe', 'brooklyncello'),
+            'edit_item' => __('Edit Recipe', 'brooklyncello'),
+            'new_item' => __('New Recipe', 'brooklyncello'),
+            'view_item' => __('View Recipe', 'brooklyncello'),
+            'view_items' => __('View Recipes', 'brooklyncello'),
+            'search_items' => __('Search Recipes', 'brooklyncello'),
+            'not_found' => __('No Recipes Found', 'brooklyncello'),
+            'not_found_in_trash' => __('No Recipes Found In Trash', 'brooklyncello'),
+            'all_items' => __('All Recipes', 'brooklyncello'),
+            'archives' => __('Recipe Archives', 'brooklyncello'),
+            'attributes' => __('Recipe Attributes', 'brooklyncello'),
+            'filter_items_list' => __('Filter Recipes List', 'brooklyncello'),
+            'items_list' => __('Recipes List', 'brooklyncello'),
+        ],
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-smiley',
+        'supports' => ['title'],
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'recipes'],
+        'query_var' => 'recipe',
+    ];
+
+    register_post_type('recipe', $args);
+});
+
+/**
  * Updates the `$post` variable on each iteration of the loop.
  * Note: updated value is only available for subsequently loaded views, such as partials
  */
