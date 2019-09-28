@@ -5,29 +5,37 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 
 class ArchiveRecipe extends Controller {
-    /*
-     * 'Featured Image' section
-     *
-     * @see `../../resources/views/archive-recipe.blade.php`
+    /**
+     * @see `../module_loader.php`
      */
-    public function featured_image() {
-        global $wp_query;
+    use ModuleLoader;
 
-        if ( have_posts() ) {
-            $first_post_id = $wp_query->posts[0]->ID;
+    private function get_featured_post_data() {
+        $data = [
+            'featured_title' => get_the_title(),
+            'featured_slug' => get_permalink()
+        ];
 
-            $data = [
-                'fields' => [
-                    'archive__mobile_featured_img' => get_field('archive__mobile_feat_img', $first_post_id),
-                    'archive__desktop_featured_img' => get_field('archive__desktop_feat_img', $first_post_id),
-                    'archive__featured_recipe_title' => get_the_title($first_post_id),
-                    'archive__featured_recipe_url' => get_permalink($first_post_id),
-                ],
-            ];
+        return $data;
+    }
 
-            return $data;
-        }
-
-        return;
+    /*
+     * 'Hero' section (Featured Recipe)
+     *
+     * @uses `App\ModuleLoader->get_module()`
+     * @see `../../resources/views/modules/hero.blade.php`
+     */
+    public function hero() {
+        return $this->get_module([
+            'module' => 'hero',
+            'prefix' => 'archive_recipe_hero',
+            'classes' => [
+                'hero hero--archive-recipe'
+            ],
+            'extras' => [
+                'variant' => 'archive-recipe',
+                'supplemental-data' => $this->get_featured_post_data()
+            ],
+        ]);
     }
 }

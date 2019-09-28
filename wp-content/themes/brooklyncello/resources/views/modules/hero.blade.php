@@ -12,8 +12,22 @@
       </picture>
     </figure>
 
-    <div class="hero__content-wrap">
-      <h1 class="hero__title">{!! $data['fields']['hero__title'] !!}</h1>
-    </div>
+    @if ( !empty($data['fields']['hero__title']) )
+      <div class="hero__content-wrap">
+        <h1 class="hero__title">{!! $data['fields']['hero__title'] !!}</h1>
+      </div>
+    @endif
+
+    @if ( $data['extras']['variant'] === 'archive-recipe' )
+      <div class="hero__sticker-wrap">
+        <span class="hero__sticker">Featured Recipe</span>
+      </div>
+
+      <div class="hero__supplemental-wrap">
+        <p class="hero__supplemental-caption">{{ __('Our Featured Recipe:', 'brooklyncello') }}</p>
+        <h2 class="hero__supplemental-header">{!! $data['extras']['supplemental-data']['featured_title'] !!}</h2>
+        <a class="hero__supplemental-cta" href="{{ $data['extras']['supplemental-data']['featured_slug'] }}">{{ __('See Recipe', 'brooklyncello') }}</a>
+      </div>
+    @endif
   </section>
 @endunless
