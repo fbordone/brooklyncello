@@ -45,3 +45,80 @@
     letter-spacing: em(1, 72);
   }
 }
+
+.hero__sticker-wrap {
+  @include hide;
+
+  @include min-width($_tablet-960px-breakpoint) {
+    @include show;
+    @include position(absolute, (top: 5%, right: 3%));
+  }
+}
+
+.hero__sticker {
+  @include inline-block;
+  font-size: em($font-size-base);
+  width: em(110, $font-size-base);
+  height: em(110, $font-size-base);
+  padding-top: em(37, $font-size-base);
+  line-height: em(22, $font-size-base);
+  background-color: c(red, dark);
+  color: c(white);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.hero__supplemental-wrap {
+  background-color: c(red, dark);
+  z-index: z(default);
+  padding: em(20);
+  color: c(white);
+  text-align: center;
+
+  @include min-width($_tablet-960px-breakpoint) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.hero__supplemental-caption {
+  font-size: em(16);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    @include hide;
+  }
+}
+
+.hero__supplemental-header {
+  letter-spacing: em(2, $font-size-h2);
+  margin-bottom: em(15, $font-size-h2);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em(50);
+    letter-spacing: em(2, 50);
+    margin-right: em(40, 50);
+    margin-bottom: 0;
+  }
+}
+
+.hero__supplemental-cta {
+  @include button {
+    border: em(2, $font-size-button) solid c(white);
+    letter-spacing: em(1, $font-size-button);
+    max-width: em(500, $font-size-button);
+    padding: em(15, $font-size-button);
+    width: 100%;
+    background-color: transparent;
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    max-width: em(150, $font-size-button);
+    padding: em(10, $font-size-button);
+  }
+}

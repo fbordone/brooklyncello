@@ -22,7 +22,11 @@ class FrontPage extends Controller {
             'prefix' => 'home_hero',
             'classes' => [
                 'hero hero--home'
-            ]
+            ],
+            'extras' => [
+                'variant' => '',
+                'supplemental-data' => ''
+            ],
         ]);
     }
 }
