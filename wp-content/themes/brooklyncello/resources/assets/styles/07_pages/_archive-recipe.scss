@@ -21,3 +21,51 @@ $_header-font-size--desktop: $font-size-h1*1.5;
     line-height: em(75, $_header-font-size--desktop);
   }
 }
+
+.recipes {
+  @include container((width: 1280px));
+  margin-top: em(45);
+}
+
+.recipes__grid-header {
+  @include font-family((type: default, weight: normal));
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.recipes__grid {
+  @include flex-container((wrap: wrap, align: flex-start));
+}
+
+.recipe {
+  @include flex-item(100%);
+  margin-top: em(40);
+
+  &:last-child {
+    margin-bottom: em(40);
+  }
+
+  @include min-width($_mobile-640px-breakpoint) {
+    @include flex-item(50%, 1em);
+    margin-top: em(45);
+
+    &:last-child {
+      margin-bottom: em(45);
+    }
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    @include flex-item(25%, 1em);
+  }
+}
+
+.recipe__img-wrap {
+  @include absolute-center((ratio: 100%, childElem: 'img'));
+  width: 100%;
+}
+
+.recipe__header {
+  margin-top: em(15, $font-size-h3);
+  letter-spacing: em(2, $font-size-h3);
+  text-align: center;
+}

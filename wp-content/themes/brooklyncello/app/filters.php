@@ -118,3 +118,19 @@ add_filter('acf/settings/load_json', function ( $paths ) {
 add_filter('max_srcset_image_width', function ( $max_width ){
     return false;
 });
+
+/**
+ * Modify main page queries
+ */
+add_action('pre_get_posts', function( $query ) {
+    // only affect main query on front-facing pages
+    if ( !$query->is_main_query() || is_admin() ) {
+        return;
+    }
+    // modify cocktails archive query
+    if ( is_post_type_archive('recipe') ) {
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'menu_order');
+        $query->set('posts_per_page', '-1');
+    }
+});
