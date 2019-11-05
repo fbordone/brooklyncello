@@ -43,9 +43,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "13"
+                "value": "views\/front-page.blade.php"
             }
         ]
     ],
@@ -57,5 +57,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567741163
+    "modified": 1572940256
 }
