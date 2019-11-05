@@ -34,7 +34,7 @@ $_header-font-size--desktop: $font-size-h1*1.5;
 }
 
 .recipes__grid {
-  @include flex-container((wrap: wrap, align: flex-start));
+  @include flex-container((wrap: wrap, justify: space-around, align: flex-start));
 }
 
 .recipe {
@@ -55,7 +55,7 @@ $_header-font-size--desktop: $font-size-h1*1.5;
   }
 
   @include min-width($_tablet-960px-breakpoint) {
-    @include flex-item(25%, 1em);
+    @include flex-item(33%, 1em);
   }
 }
 
