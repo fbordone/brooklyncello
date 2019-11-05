@@ -14,7 +14,13 @@
 
     @if ( !empty($data['fields']['hero__title']) )
       <div class="hero__content-wrap">
-        <h1 class="hero__title">{!! $data['fields']['hero__title'] !!}</h1>
+        <h1 class="hero__title {{ !empty($data['fields']['hero__title_size']) ? "hero__title--{$data['fields']['hero__title_size']}" : '' }}">
+          {!! $data['fields']['hero__title'] !!}
+        </h1>
+
+        <h1 class="hero__subtitle {{ !empty($data['fields']['hero__subtitle_size']) ? "hero__subtitle--{$data['fields']['hero__subtitle_size']}" : '' }}">
+          {!! $data['fields']['hero__subtitle'] !!}
+        </h1>
       </div>
     @endif
 

@@ -7,11 +7,11 @@
             "label": "Title",
             "name": "hero__title",
             "type": "text",
-            "instructions": "Set the hero title that will display over the image.",
+            "instructions": "Set the main title that will display over the image.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -20,6 +20,75 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5dc1056376fd0",
+            "label": "Title Size",
+            "name": "hero__title_size",
+            "type": "radio",
+            "instructions": "Set the main title size. Leave blank for default font size (72px).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "smaller": "68px",
+                "large": "80px",
+                "larger": "90px"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5dbf6977ea53f",
+            "label": "Subtitle",
+            "name": "hero__subtitle",
+            "type": "text",
+            "instructions": "Set the subtitle that will display underneath the main title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dc105d176fd2",
+            "label": "Subtitle Size",
+            "name": "hero__subtitle_size",
+            "type": "radio",
+            "instructions": "Set the subtitle size. Leave blank for default font size (72px).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "smaller": "68px",
+                "large": "80px",
+                "larger": "90px"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
         },
         {
             "key": "field_5d71d585f1f46",
@@ -87,5 +156,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1567970978
+    "modified": 1572934081
 }
