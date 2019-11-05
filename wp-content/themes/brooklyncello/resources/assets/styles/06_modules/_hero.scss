@@ -35,14 +35,121 @@
   font-size: em(32);
   letter-spacing: em(1, 32);
 
+  &--smaller {
+    font-size: em(28);
+    letter-spacing: em(1, 28);
+  }
+
+  &--large {
+    font-size: em(36);
+    letter-spacing: em(1, 36);
+  }
+
+  &--larger {
+    font-size: em(40);
+    letter-spacing: em(1, 40);
+  }
+
   @include min-width($_mobile-480px-breakpoint) {
     font-size: em($font-size-h1);
     letter-spacing: em(1, $font-size-h1);
+
+    &--smaller {
+      font-size: em(50);
+      letter-spacing: em(1, 50);
+    }
+
+    &--large {
+      font-size: em(58);
+      letter-spacing: em(1, 58);
+    }
+
+    &--larger {
+      font-size: em(62);
+      letter-spacing: em(1, 62);
+    }
   }
 
   @include min-width($_tablet-960px-breakpoint) {
     font-size: em(72);
     letter-spacing: em(1, 72);
+
+    &--smaller {
+      font-size: em(68);
+      letter-spacing: em(1, 68);
+    }
+
+    &--large {
+      font-size: em(80);
+      letter-spacing: em(1, 80);
+    }
+
+    &--larger {
+      font-size: em(90);
+      letter-spacing: em(1, 90);
+    }
+  }
+}
+
+.hero__subtitle {
+  color: white;
+  font-weight: bold;
+  font-size: em(32);
+  letter-spacing: em(1, 32);
+
+  &--smaller {
+    font-size: em(28);
+    letter-spacing: em(1, 28);
+  }
+
+  &--large {
+    font-size: em(36);
+    letter-spacing: em(1, 36);
+  }
+
+  &--larger {
+    font-size: em(40);
+    letter-spacing: em(1, 40);
+  }
+
+  @include min-width($_mobile-480px-breakpoint) {
+    font-size: em($font-size-h1);
+    letter-spacing: em(1, $font-size-h1);
+
+    &--smaller {
+      font-size: em(50);
+      letter-spacing: em(1, 50);
+    }
+
+    &--large {
+      font-size: em(58);
+      letter-spacing: em(1, 58);
+    }
+
+    &--larger {
+      font-size: em(62);
+      letter-spacing: em(1, 62);
+    }
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em(72);
+    letter-spacing: em(1, 72);
+
+    &--smaller {
+      font-size: em(64);
+      letter-spacing: em(1, 64);
+    }
+
+    &--large {
+      font-size: em(80);
+      letter-spacing: em(1, 80);
+    }
+
+    &--larger {
+      font-size: em(90);
+      letter-spacing: em(1, 90);
+    }
   }
 }
 
