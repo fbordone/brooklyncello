@@ -1,0 +1,51 @@
+/* ==============================================================================================
+
+// ABOUT PAGE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.about {
+  @include container((width: 1120px));
+  margin-top: em(30);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-top: em(40);
+  }
+}
+
+.about__preface {
+  margin-bottom: em(35, $font-size-base);
+  line-height: em(30, $font-size-base);
+  font-weight: bold;
+  text-align: center;
+  border-bottom: em(1, $font-size-base) solid c(black);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-bottom: em(55, $font-size-base);
+  }
+
+  @include min-width($_mobile-640px-breakpoint) {
+    padding-left: em(40, $font-size-base);
+    padding-right: em(40, $font-size-base);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-left: em(60, $font-size-base);
+    padding-right: em(60, $font-size-base);
+  }
+
+  p + p {
+    margin-top: em(20, $font-size-base);
+  }
+
+  p:last-child {
+    margin-bottom: em(30, $font-size-base);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      margin-bottom: em(40, $font-size-base);
+    }
+  }
+}

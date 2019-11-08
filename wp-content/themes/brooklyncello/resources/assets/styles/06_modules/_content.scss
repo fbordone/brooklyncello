@@ -1,0 +1,61 @@
+/* ==============================================================================================
+
+// CONTENT MODULE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.content-block__img-wrap {
+  @include absolute-center((ratio: 100%, childElem: 'img'));
+  width: 100%;
+  margin-bottom: em(20);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    padding-bottom: 45%;
+    margin-bottom: em(50);
+  }
+}
+
+.content-block__copy-wrap {
+  text-align: center;
+}
+
+.content-block {
+  @include flex-container((wrap: wrap));
+  padding-bottom: em(30);
+
+  > .content-block__img-wrap {
+    @include min-width($_tablet-800px-breakpoint) {
+      @include flex-item(50%, 1em);
+    }
+  }
+
+  > .content-block__copy-wrap {
+    @include min-width($_tablet-800px-breakpoint) {
+      @include flex-item(50%, 1em);
+    }
+  }
+
+  &--reversed {
+    @include min-width($_tablet-800px-breakpoint) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.content-block__pretitle {
+  text-transform: uppercase;
+  color: c(red);
+  font-weight: bold;
+}
+
+.content-block__title {
+  margin-bottom: em(15, $font-size-h4);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-h3);
+    margin-bottom: em(15, $font-size-h3);
+  }
+}

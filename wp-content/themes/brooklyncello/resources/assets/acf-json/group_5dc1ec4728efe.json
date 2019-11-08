@@ -1,0 +1,124 @@
+{
+    "key": "group_5dc1ec4728efe",
+    "title": "Module - Content",
+    "fields": [
+        {
+            "key": "field_5dc371b2c7b32",
+            "label": "Image",
+            "name": "content__img",
+            "type": "image",
+            "instructions": "Upload an image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x960px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5dc37233c7b33",
+            "label": "Pretitle",
+            "name": "content__pretitle",
+            "type": "text",
+            "instructions": "Set the pre-title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dc3727ac7b34",
+            "label": "Title",
+            "name": "content__title",
+            "type": "text",
+            "instructions": "Set the main title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dc373bcc7b35",
+            "label": "Description",
+            "name": "content__desc",
+            "type": "textarea",
+            "instructions": "Set a small description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5dc375041e6f8",
+            "label": "Flip",
+            "name": "content__flip",
+            "type": "true_false",
+            "instructions": "By default, the image will appear on the left and the copy text on the right. If you wish to have the copy text on the left and the image on the right, set this toggle to 'True'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Set to 'True' to flip-flop content",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "True",
+            "ui_off_text": "False"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1573181012
+}
