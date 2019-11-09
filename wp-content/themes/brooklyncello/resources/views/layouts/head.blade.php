@@ -8,8 +8,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ home_url() }}/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ home_url() }}/favicon-16x16.png">
   <link rel="manifest" href="{{ home_url() }}/site.webmanifest">
-  <link rel="mask-icon" href="{{ home_url() }}/safari-pinned-tab.svg" color="#000000">
-  <meta name="msapplication-TileColor" content="#f0a693">
+  <link rel="mask-icon" href="{{ home_url() }}/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
   @php wp_head() @endphp
