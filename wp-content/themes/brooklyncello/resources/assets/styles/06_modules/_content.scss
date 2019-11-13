@@ -14,7 +14,7 @@
 
   @include min-width($_tablet-800px-breakpoint) {
     padding-bottom: 45%;
-    margin-bottom: em(50);
+    margin-bottom: em(30);
   }
 }
 
@@ -23,12 +23,16 @@
 }
 
 .content-block {
-  @include flex-container((wrap: wrap));
-  padding-bottom: em(30);
+  @include flex-container((wrap: wrap, justify: space-around));
+  padding-bottom: em(50);
+
+  @include min-width($_laptop-1280px-breakpoint) {
+    padding-bottom: 0;
+  }
 
   > .content-block__img-wrap {
     @include min-width($_tablet-800px-breakpoint) {
-      @include flex-item(50%, 1em);
+      @include flex-item(45%, 1em);
     }
   }
 

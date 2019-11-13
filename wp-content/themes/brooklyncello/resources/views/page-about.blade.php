@@ -13,7 +13,9 @@
 
     <section class="about">
       <div class="about__preface">{!! get_the_content() !!}</div>
+    </section>
 
+    <div class="about__content">
       {{-- 'Content One' section --}}
       @isset($about_content_one)
         @include('modules.content', ['data' => $about_content_one])
@@ -28,6 +30,6 @@
       @isset($about_content_three)
         @include('modules.content', ['data' => $about_content_three])
       @endisset
-    </section>
+    </div>
   @endwhile
 @endsection

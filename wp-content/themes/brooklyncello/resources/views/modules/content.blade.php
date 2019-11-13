@@ -20,7 +20,7 @@
       @endif
 
       @if ( !empty($data['fields']['content__desc']) )
-        <p class="content-block__desc">{{ $data['fields']['content__desc'] }}</p>
+        <p class="content-block__desc">{!! $data['fields']['content__desc'] !!}</p>
       @endif
     </div>
   </div>
