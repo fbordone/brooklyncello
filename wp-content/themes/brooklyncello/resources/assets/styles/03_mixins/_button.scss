@@ -40,7 +40,7 @@
 
   @if type-of($color) == 'color' {
     color: #{$color};
-    &:visited { color: #{$color}; }
+    // &:visited { color: #{$color}; }
   }
 
   // other default button styles

@@ -48,4 +48,13 @@ class App extends Controller {
     public function copyright() {
         return get_field('copyright', 'option');
     }
+
+    /**
+     * Age gate background image (defined in global theme options)
+     *
+     * @return string
+     */
+    public function age_gate_img() {
+        return get_field('age_gate_img', 'option');
+    }
 }

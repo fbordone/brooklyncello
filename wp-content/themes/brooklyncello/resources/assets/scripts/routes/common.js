@@ -1,5 +1,6 @@
 import picturefill from 'picturefill';
 import webFont from 'webfontloader';
+import * as Cookies from 'js-cookie';
 
 export default {
   init() {
@@ -28,6 +29,30 @@ export default {
         families: ['Nunito', 'Nunito:700'],
       },
       timeout: 3000,
+    });
+
+    // Age gate logic
+    // Toggle age gate based on cookie existence
+    if( !Cookies.get('age-gate-passed') ) {
+      document.body.classList.add('age-gate-active');
+    } else {
+      document.body.classList.remove('age-gate-active');
+    }
+
+    // Age gate buttons
+    const ageGateYes = document.querySelector('.age-gate__button--yes');
+
+    // Click event listener that sets cookie to pass age gate
+    ageGateYes.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Sets cookie with an expiration date of 3 days
+      Cookies.set('age-gate-passed', 'true', {
+        expires: 3,
+      });
+
+      // Trigger window reload
+      window.location.reload(true);
     });
 
     // handle mobile nav listener
