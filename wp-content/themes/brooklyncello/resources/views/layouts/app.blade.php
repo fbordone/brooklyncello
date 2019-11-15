@@ -13,6 +13,10 @@
     </div>
     @php do_action('get_footer') @endphp
     @include('layouts.footer')
+
+    {{-- Age gate --}}
+    @include('layouts.age-gate')
+
     @php wp_footer() @endphp
     {{-- include spritemap --}}
     @if( $sprite_path )
