@@ -20,7 +20,7 @@
         },
         {
             "key": "field_5dcb9123fe93c",
-            "label": "Age Gate Background Image",
+            "label": "Background Image",
             "name": "age_gate_img",
             "type": "image",
             "instructions": "Upload the age gate background image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1920x1080px<\/strong>",
@@ -41,6 +41,82 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5dd067204c55c",
+            "label": "Title",
+            "name": "age_gate_title",
+            "type": "text",
+            "instructions": "Set the main title of the age gate.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dd0674a4c55d",
+            "label": "Subtitle",
+            "name": "age_gate_subtitle",
+            "type": "text",
+            "instructions": "Set the subtitle of the age gate, which displays directly under the main title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dd0678a4c55f",
+            "label": "'Yes' Button Text",
+            "name": "age_gate_yes",
+            "type": "text",
+            "instructions": "Set the text that will display inside of the \"Yes\" button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dd067d84c560",
+            "label": "'No' Button Text",
+            "name": "age_gate_no",
+            "type": "text",
+            "instructions": "Set the text that will display inside of the \"No\" button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5d758ea1dfa72",
@@ -174,5 +250,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1573797483
+    "modified": 1573939175
 }

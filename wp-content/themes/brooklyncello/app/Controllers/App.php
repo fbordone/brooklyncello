@@ -49,12 +49,20 @@ class App extends Controller {
         return get_field('copyright', 'option');
     }
 
-    /**
-     * Age gate background image (defined in global theme options)
+     /**
+     * Age gate specific data (defined in global theme options)
      *
-     * @return string
+     * @return array
      */
-    public function age_gate_img() {
-        return get_field('age_gate_img', 'option');
+    public function age_gate_data() {
+        $data = [
+            'img'  => get_field('age_gate_img', 'option'),
+            'title' => get_field('age_gate_title', 'option'),
+            'subtitle' => get_field('age_gate_subtitle', 'option'),
+            'yes-btn' => get_field('age_gate_yes', 'option'),
+            'no-btn' => get_field('age_gate_no', 'option'),
+        ];
+
+        return $data;
     }
 }
