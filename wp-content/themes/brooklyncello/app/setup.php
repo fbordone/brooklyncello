@@ -124,13 +124,18 @@ add_action('init', function() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-smiley',
-        'supports' => ['title'],
+        'show_in_rest' => true,
+        'supports' => ['title', 'editor'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'recipes'],
         'query_var' => 'recipe',
     ];
 
     register_post_type('recipe', $args);
+
+    /************ Taxonomies ************/
+    /* Add default 'tag' taxonomy to Recipe CPT */
+    register_taxonomy_for_object_type('post_tag', 'recipe');
 });
 
 /**

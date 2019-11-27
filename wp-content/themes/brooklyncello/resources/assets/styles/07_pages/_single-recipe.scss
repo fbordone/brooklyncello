@@ -1,0 +1,145 @@
+/* ==============================================================================================
+
+// SINGLE RECIPE PAGE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.single-recipe__desc-wrap {
+  @include container((width: 1120px));
+  margin-top: em(30);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-top: em(40);
+  }
+}
+
+.single-recipe__desc {
+  margin-bottom: em(25, $font-size-base);
+  line-height: em(30, $font-size-base);
+  font-weight: bold;
+  text-align: center;
+  border-bottom: em(1, $font-size-base) solid c(black);
+
+  @include min-width($_mobile-640px-breakpoint) {
+    padding-left: em(40, $font-size-base);
+    padding-right: em(40, $font-size-base);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-bottom: em(48, $font-size-base);
+    padding-left: em(60, $font-size-base);
+    padding-right: em(60, $font-size-base);
+  }
+
+  p + p {
+    margin-top: em(20, $font-size-base);
+  }
+
+  p:last-child {
+    margin-bottom: em(30, $font-size-base);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      margin-bottom: em(40, $font-size-base);
+    }
+  }
+}
+
+.single-recipe__pill-wrap {
+  margin-top: em(20);
+  margin-bottom: em(30);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-bottom: em(50);
+  }
+}
+
+.single-recipe__pill {
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: c(black);
+  font-size: em(16);
+  padding: em(7, 16) em(17, 16);
+  margin: em(4, 16) em(2, 16);
+  border-radius: em(16, 16);
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: c(white);
+  }
+}
+
+.recipe-details {
+  @include container((width: 1120px));
+  padding-top: em(7);
+  padding-bottom: em(25);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-bottom: em(45);
+  }
+}
+
+.recipe-details__wrap {
+  @include flex-container((direction: column, align: flex-start));
+}
+
+.recipe-details__ingredients {
+  margin-bottom: em(30);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-bottom: em(40);
+  }
+}
+
+.recipe-details__header {
+  margin-bottom: em(10, $font-size-h3);
+  letter-spacing: em(1, $font-size-h3);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em($font-size-h2);
+    margin-bottom: em(10, $font-size-h2);
+    letter-spacing: em(1, $font-size-h2);
+  }
+
+  &--methods {
+    margin-bottom: em(20, $font-size-h3);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      font-size: em($font-size-h2);
+      margin-bottom: em(20, $font-size-h2);
+    }
+  }
+}
+
+.recipe-details__methods-list {
+  counter-reset: item;
+}
+
+.recipe-details__ingredient,
+.recipe-details__method {
+  font-size: em(16);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em($font-size-base);
+  }
+}
+
+.recipe-details__method {
+  line-height: em(25, 16);
+  margin-bottom: em(13, 16);
+  counter-increment: item;
+
+  &::before {
+    content: counter(item);
+    display: inline-block;
+    margin-right: em(8, 16);
+    width: em(27, 16);
+    border: em(1, 16) solid c(black);
+    border-radius: 100%;
+    text-align: center;
+  }
+}
