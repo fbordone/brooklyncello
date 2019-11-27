@@ -48,4 +48,24 @@ class SingleRecipe extends Controller {
 
         return $tag_data;
     }
+
+    public function ingredients() {
+        if ( get_field('single_recipe_ingredients_list', get_the_ID() ) ) {
+            $recipe_ingredients = array_column(get_field('single_recipe_ingredients_list', get_the_ID()), 'ingredient');
+
+            return $recipe_ingredients;
+        }
+
+        return;
+    }
+
+    public function methods() {
+        if ( get_field('single_recipe_methods_list', get_the_ID() ) ) {
+            $recipe_methods = array_column(get_field('single_recipe_methods_list', get_the_ID()), 'method');
+
+            return $recipe_methods;
+        }
+
+        return;
+    }
 }
