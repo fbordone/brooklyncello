@@ -23,15 +23,18 @@
 .hero__content-wrap {
   @include position(absolute, (top: 50%, left: 50%));
   transform: translate(-50%, -50%);
-  padding-right: em($container-gutter);
-  padding-left: em($container-gutter);
   text-align: center;
-  width: 100%;
+  background-color: c(white);
+  padding: em(20);
+  width: 80%;
+  opacity: 0.75;
+
+  @include min-width($_tablet-1120px-breakpoint) {
+    width: 55%;
+  }
 }
 
 .hero__title {
-  color: white;
-  font-weight: bold;
   font-size: em(32);
   letter-spacing: em(1, 32);
 
@@ -92,8 +95,6 @@
 }
 
 .hero__subtitle {
-  color: white;
-  font-weight: bold;
   font-size: em(32);
   letter-spacing: em(1, 32);
 
