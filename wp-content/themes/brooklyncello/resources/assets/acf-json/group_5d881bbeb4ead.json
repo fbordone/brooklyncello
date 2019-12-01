@@ -246,7 +246,7 @@
                     "label": "Method",
                     "name": "method",
                     "type": "text",
-                    "instructions": "Enter recipe's ingredients.",
+                    "instructions": "Enter recipe's methods.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -280,5 +280,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574819704
+    "modified": 1575054752
 }

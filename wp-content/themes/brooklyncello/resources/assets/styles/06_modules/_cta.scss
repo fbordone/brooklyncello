@@ -1,0 +1,57 @@
+/* ==============================================================================================
+
+// CTA MODULE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.cta {
+  @include container((width: 1120px));
+  padding-top: em(30);
+  padding-bottom: em(40);
+  text-align: center;
+
+  @include min-width($_mobile-480px-breakpoint) {
+    padding-top: em(75);
+    padding-bottom: em(60);
+  }
+}
+
+.cta__tagline {
+  font-weight: bold;
+  line-height: em(35, $font-size-base);
+
+  @include min-width($_mobile-480px-breakpoint) {
+    font-size: em(24);
+    line-height: em(35, 24);
+    margin-bottom: em(25, 24);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    font-size: em(26);
+    line-height: em(40, 26);
+    margin-bottom: em(30, 26);
+  }
+
+  &--margin {
+    margin-bottom: em(25, $font-size-base);
+
+    @include min-width($_mobile-480px-breakpoint) {
+      margin-bottom: em(25, 24);
+    }
+
+    @include min-width($_tablet-960px-breakpoint) {
+      margin-bottom: em(30, 26);
+    }
+  }
+}
+
+.cta__btn {
+  @include button {
+    background-color: c(red, dark);
+    border: em(1) solid c(red, dark);
+    color: c(white) !important;
+  }
+}

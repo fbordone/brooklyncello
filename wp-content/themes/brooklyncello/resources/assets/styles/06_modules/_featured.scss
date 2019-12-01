@@ -1,0 +1,26 @@
+/* ==============================================================================================
+
+// FEATURED MODULE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.featured {
+  @include container((width: 1280px));
+  text-align: center;
+}
+
+.featured__title {
+  @include font-family((type: default, weight: normal));
+  letter-spacing: 0;
+}
+
+.featured__recipe {
+  margin-top: em(20) !important;
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-top: em(30) !important;
+  }
+}

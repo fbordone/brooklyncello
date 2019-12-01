@@ -19,11 +19,17 @@ trait ModuleLoader {
      * @see get_module()
      */
     private $modules = [
-        'hero' => [
-            'fields' => ['hero__title', 'hero__title_size', 'hero__subtitle', 'hero__subtitle_size', 'hero__mobile_img', 'hero__desktop_img'],
-        ],
         'content' => [
             'fields' => ['content__img', 'content__pretitle', 'content__title', 'content__desc', 'content__flip'],
+        ],
+        'cta' => [
+            'fields' => ['cta__tagline', 'cta__button'],
+        ],
+        'featured' => [
+            'fields' => ['featured__title', 'featured__recipes'],
+        ],
+        'hero' => [
+            'fields' => ['hero__title', 'hero__title_size', 'hero__subtitle', 'hero__subtitle_size', 'hero__mobile_img', 'hero__desktop_img'],
         ],
     ];
 
