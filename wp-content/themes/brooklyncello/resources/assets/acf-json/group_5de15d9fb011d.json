@@ -3,11 +3,11 @@
     "title": "Module - Call To Action",
     "fields": [
         {
-            "key": "field_5de15dc494c3b",
-            "label": "Tagline",
-            "name": "cta__tagline",
-            "type": "textarea",
-            "instructions": "Set the tagline for this call-to-action.",
+            "key": "field_5de36f60bc4ed",
+            "label": "Editor",
+            "name": "cta__editor",
+            "type": "wysiwyg",
+            "instructions": "Set the content for this call-to-action.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,10 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "br"
+            "tabs": "text",
+            "media_upload": 1,
+            "toolbar": "full",
+            "delay": 0
         },
         {
             "key": "field_5de15e0a94c3c",
@@ -54,5 +54,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1575050821
+    "modified": 1575189465
 }

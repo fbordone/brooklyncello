@@ -9,41 +9,58 @@
 /************* General styles ************/
 .cta {
   @include container((width: 1120px));
-  padding-top: em(30);
-  padding-bottom: em(40);
+  padding-top: em(50);
+  padding-bottom: em(50);
   text-align: center;
 
   @include min-width($_mobile-480px-breakpoint) {
     padding-top: em(75);
-    padding-bottom: em(60);
-  }
-}
-
-.cta__tagline {
-  font-weight: bold;
-  line-height: em(35, $font-size-base);
-
-  @include min-width($_mobile-480px-breakpoint) {
-    font-size: em(24);
-    line-height: em(35, 24);
-    margin-bottom: em(25, 24);
+    padding-bottom: em(75);
   }
 
-  @include min-width($_tablet-960px-breakpoint) {
-    font-size: em(26);
-    line-height: em(40, 26);
-    margin-bottom: em(30, 26);
-  }
-
-  &--margin {
-    margin-bottom: em(25, $font-size-base);
+  &--home-three {
+    padding-top: em(10);
+    padding-bottom: em(0);
 
     @include min-width($_mobile-480px-breakpoint) {
-      margin-bottom: em(25, 24);
+      padding-top: em(45);
+      padding-bottom: em(10);
+    }
+  }
+
+  &--home-four {
+    padding-top: em(30);
+    padding-bottom: em(50);
+
+    @include min-width($_mobile-480px-breakpoint) {
+      padding-top: em(45);
+      padding-bottom: em(75);
+    }
+  }
+
+  > p {
+    font-weight: bold;
+    line-height: em(35, $font-size-base);
+    margin-bottom: em(15, $font-size-base);
+
+    @include min-width($_mobile-480px-breakpoint) {
+      font-size: em(24);
+      line-height: em(35, 24);
+      margin-bottom: em(15, 24);
     }
 
     @include min-width($_tablet-960px-breakpoint) {
-      margin-bottom: em(30, 26);
+      font-size: em(26);
+      line-height: em(40, 26);
+      margin-bottom: em(15, 26);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > a {
+      color: c(red, dark);
     }
   }
 }
@@ -54,4 +71,8 @@
     border: em(1) solid c(red, dark);
     color: c(white) !important;
   }
+}
+
+.cta__hr {
+  margin-top: em(55);
 }

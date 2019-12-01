@@ -35,5 +35,10 @@
     @isset($cta_three)
       @include('modules.cta', ['data' => $cta_three])
     @endisset
+
+    {{-- 'CTA' section 4 --}}
+    @isset($cta_four)
+      @include('modules.cta', ['data' => $cta_four])
+    @endisset
   @endwhile
 @endsection

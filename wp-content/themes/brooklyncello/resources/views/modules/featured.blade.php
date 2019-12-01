@@ -29,8 +29,6 @@
           </div>
         @endfor
       </div>
-
-      <hr>
     </section>
   @endif
 @endunless

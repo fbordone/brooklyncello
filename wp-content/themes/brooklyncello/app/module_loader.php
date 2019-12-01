@@ -23,7 +23,7 @@ trait ModuleLoader {
             'fields' => ['content__img', 'content__pretitle', 'content__title', 'content__desc', 'content__flip'],
         ],
         'cta' => [
-            'fields' => ['cta__tagline', 'cta__button'],
+            'fields' => ['cta__editor', 'cta__button'],
         ],
         'featured' => [
             'fields' => ['featured__title', 'featured__recipes'],

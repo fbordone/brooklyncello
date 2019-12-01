@@ -43,6 +43,9 @@ class FrontPage extends Controller {
             'classes' => [
                 'cta cta--home'
             ],
+            'extras' => [
+                'variant' => '',
+            ],
         ]);
     }
 
@@ -79,6 +82,9 @@ class FrontPage extends Controller {
             'classes' => [
                 'cta cta--home-two'
             ],
+            'extras' => [
+                'variant' => '',
+            ],
         ]);
     }
 
@@ -110,6 +116,28 @@ class FrontPage extends Controller {
             'prefix' => 'home_cta_three',
             'classes' => [
                 'cta cta--home-three'
+            ],
+            'extras' => [
+                'variant' => 'horizontal-line',
+            ],
+        ]);
+    }
+
+        /*
+     * 'CTA' section 4
+     *
+     * @uses `App\ModuleLoader->get_module()`
+     * @see `../../resources/views/modules/cta.blade.php`
+     */
+    public function cta_four() {
+        return $this->get_module([
+            'module' => 'cta',
+            'prefix' => 'home_cta_four',
+            'classes' => [
+                'cta cta--home-four'
+            ],
+            'extras' => [
+                'variant' => '',
             ],
         ]);
     }

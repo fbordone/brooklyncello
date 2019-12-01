@@ -13,8 +13,11 @@
 }
 
 .featured__title {
-  @include font-family((type: default, weight: normal));
   letter-spacing: 0;
+
+  @include min-width($_mobile-480px-breakpoint) {
+    font-size: em($font-size-h1);
+  }
 }
 
 .featured__recipe {
