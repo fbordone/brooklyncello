@@ -1,0 +1,58 @@
+{
+    "key": "group_5de15d9fb011d",
+    "title": "Module - Call To Action",
+    "fields": [
+        {
+            "key": "field_5de36f60bc4ed",
+            "label": "Editor",
+            "name": "cta__editor",
+            "type": "wysiwyg",
+            "instructions": "Set the content for this call-to-action.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 1,
+            "toolbar": "full",
+            "delay": 0
+        },
+        {
+            "key": "field_5de15e0a94c3c",
+            "label": "Button",
+            "name": "cta__button",
+            "type": "link",
+            "instructions": "Add button text and button link for this call-to-action.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1575189465
+}
