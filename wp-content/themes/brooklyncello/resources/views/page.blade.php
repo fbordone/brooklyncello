@@ -2,8 +2,8 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'brooklyncello') }}
-    </div>
+    <section class="content">
+      <div class="content__copy">{!! get_the_content() !!}</div>
+    </section>
   @endwhile
 @endsection
