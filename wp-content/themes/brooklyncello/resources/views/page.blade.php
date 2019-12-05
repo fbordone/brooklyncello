@@ -2,7 +2,8 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.page-header')
-    @include('partials.content-page')
+    <div class="alert alert-warning">
+      {{ __('Sorry, no results were found.', 'brooklyncello') }}
+    </div>
   @endwhile
 @endsection
