@@ -1,0 +1,43 @@
+/* ==============================================================================================
+
+// BUY PAGE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.blurb {
+  @include container((width: 1120px));
+  margin-top: em(50);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-top: em(80);
+  }
+}
+
+.buy {
+  padding-bottom: em(50);
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-bottom: em(80);
+  }
+}
+
+.buy__table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.buy__table-title,
+.buy__table-data {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.buy__table-data {
+  width: 25%;
+}

@@ -27,7 +27,7 @@
   padding-bottom: em(50);
 
   @include min-width($_laptop-1280px-breakpoint) {
-    padding-bottom: 0;
+    padding-bottom: em(10);
   }
 
   > .content-block__img-wrap {
@@ -61,5 +61,11 @@
   @include min-width($_tablet-800px-breakpoint) {
     font-size: em($font-size-h3);
     margin-bottom: em(15, $font-size-h3);
+  }
+}
+
+.content-block__desc {
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em(16);
   }
 }
