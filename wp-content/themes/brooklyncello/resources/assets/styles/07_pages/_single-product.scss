@@ -1,0 +1,25 @@
+/* ==============================================================================================
+
+// SINGLE PRODUCT PAGE STYLES
+
+================================================================================================= */
+
+/************* Internal variables ************/
+
+/************* General styles ************/
+.single-product__header {
+  margin-bottom: em(15, $font-size-h1);
+  text-align: center;
+
+  @include min-width($_tablet-960px-breakpoint) {
+    margin: em(20, $font-size-h1) 0 em(30, $font-size-h1) 0;
+  }
+}
+
+.single-product__content {
+  @include container((width: 1280px));
+
+  .single-recipe__pill-wrap {
+    text-align: center;
+  }
+}

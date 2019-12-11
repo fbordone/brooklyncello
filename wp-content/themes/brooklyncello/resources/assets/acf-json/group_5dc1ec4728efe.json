@@ -68,7 +68,7 @@
             "key": "field_5dc373bcc7b35",
             "label": "Description",
             "name": "content__desc",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "Set a small description.",
             "required": 0,
             "conditional_logic": 0,
@@ -78,10 +78,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 8,
-            "new_lines": "br"
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5dc375041e6f8",
@@ -120,5 +120,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1573348063
+    "modified": 1576030457
 }
