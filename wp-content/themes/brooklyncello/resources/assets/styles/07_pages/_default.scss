@@ -7,12 +7,12 @@
 /************* Internal variables ************/
 
 /************* General styles ************/
-.content {
+.default-content {
   padding-top: em(40);
   padding-bottom: em(40);
 }
 
-.content__copy {
+.default-content__copy {
   @include container((width: 1120px));
 
   a {
