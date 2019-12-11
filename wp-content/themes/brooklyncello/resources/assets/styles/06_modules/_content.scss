@@ -69,3 +69,49 @@
     font-size: em(16);
   }
 }
+
+.content-block--product {
+  .content-block__img-wrap {
+    @include absolute-center((ratio: 100%, childElem: 'img'));
+    width: 100%;
+    margin-bottom: em(20);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      padding-bottom: 45%;
+      margin-bottom: em(30);
+    }
+  }
+
+  @include flex-container((wrap: wrap, justify: space-around));
+  padding-bottom: em(50);
+
+  @include min-width($_laptop-1280px-breakpoint) {
+    padding-bottom: em(10);
+  }
+
+  > .content-block__img-wrap {
+    @include min-width($_tablet-800px-breakpoint) {
+      @include flex-item(100%, 1em);
+    }
+
+    @include min-width($_tablet-960px-breakpoint) {
+      @include flex-item(45%, 1em);
+    }
+  }
+
+  > .content-block__copy-wrap {
+    @include min-width($_tablet-800px-breakpoint) {
+      @include flex-item(100%, 1em);
+    }
+
+    @include min-width($_tablet-960px-breakpoint) {
+      @include flex-item(50%, 1em);
+    }
+  }
+
+  &--reversed {
+    @include min-width($_tablet-960px-breakpoint) {
+      flex-direction: row-reverse;
+    }
+  }
+}

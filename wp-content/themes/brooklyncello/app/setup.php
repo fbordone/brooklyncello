@@ -133,6 +133,37 @@ add_action('init', function() {
 
     register_post_type('recipe', $args);
 
+    /* Products */
+    $args = [
+        'labels' => [
+            'name' => __('Products', 'brooklyncello'),
+            'singular_name' => __('Product', 'brooklyncello'),
+            'add_new_item' => __('Add New Product', 'brooklyncello'),
+            'edit_item' => __('Edit Product', 'brooklyncello'),
+            'new_item' => __('New Product', 'brooklyncello'),
+            'view_item' => __('View Product', 'brooklyncello'),
+            'view_items' => __('View Products', 'brooklyncello'),
+            'search_items' => __('Search Products', 'brooklyncello'),
+            'not_found' => __('No Products Found', 'brooklyncello'),
+            'not_found_in_trash' => __('No Products Found In Trash', 'brooklyncello'),
+            'all_items' => __('All Products', 'brooklyncello'),
+            'archives' => __('Product Archives', 'brooklyncello'),
+            'attributes' => __('Product Attributes', 'brooklyncello'),
+            'filter_items_list' => __('Filter Products List', 'brooklyncello'),
+            'items_list' => __('Products List', 'brooklyncello'),
+        ],
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-carrot',
+        'show_in_rest' => true,
+        'supports' => ['title'],
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'products'],
+        'query_var' => 'product',
+    ];
+
+    register_post_type('product', $args);
+
     /************ Taxonomies ************/
     /* Add default 'tag' taxonomy to Recipe CPT */
     register_taxonomy_for_object_type('post_tag', 'recipe');
