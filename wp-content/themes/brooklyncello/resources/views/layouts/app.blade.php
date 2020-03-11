@@ -2,6 +2,7 @@
 <html {!! get_language_attributes() !!}>
   @include('layouts.head')
   <body @php body_class() @endphp>
+    @php wp_body_open(); @endphp
     @php do_action('get_header') @endphp
     @include('layouts.header')
     <div class="wrap" role="document">

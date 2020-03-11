@@ -125,3 +125,24 @@ function locate_template($templates)
 {
     return \locate_template(filter_templates($templates));
 }
+
+/**
+ * Uses regex to test URL against certain conditions
+ *
+ * @param string $env   Supported values: 'production', 'dev'
+ * @return boolean
+ */
+function is_env( $env = 'production' )
+{
+    $site_url = get_site_url();
+    switch ($env) :
+        case 'dev':
+            return preg_match('/(\.test)|(localhost)/i', $site_url) === 1 ? true : false;
+            break;
+        case 'production':
+            // checks `.test` or `localhost` domains
+            return preg_match('/(\.test)|(localhost)/i', $site_url) === 0 ? true : false;
+            break;
+    endswitch;
+    return false;
+}
