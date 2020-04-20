@@ -23,76 +23,19 @@ body.age-gate-active {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
 
-  .age-gate__content-wrap {
-    @include position(absolute, (top: 50%, left: 50%));
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: c(white);
-    padding: em(20);
-    width: 80%;
-    opacity: 0.85;
-
-    @include min-width($_tablet-800px-breakpoint) {
-      width: em(640);
-      padding: em(60);
-    }
-  }
-
-  .age-gate__title {
-    font-size: $font-size-h3;
-
-    @include min-width($_tablet-800px-breakpoint) {
-      font-size: $font-size-h1;
-    }
-  }
-
-  .age-gate__subtitle {
-    margin-bottom: em(15, $font-size-base);
-
-    @include min-width($_tablet-800px-breakpoint) {
-      font-size: em(25);
-      margin-bottom: em(30, 25);
-    }
-  }
-
-  .age-gate__button {
-    @include button;
-
-    @include button {
-      @include transition;
-      background-color: transparent;
-      border: em(1) solid c(black);
-      color: c(black);
-
-      &:hover,
-      &:focus {
-        @include transition;
-        background-color: c(red);
-        color: c(white);
-        border-color: c(red);
-      }
-    }
-
-    &:first-of-type {
-      margin-right: em(15);
-    }
-
-    &--yes {
-      padding: em(15, $font-size-button) em(25, $font-size-button);
-
+    .overlay-block {
       @include min-width($_tablet-800px-breakpoint) {
-        padding: em(20, $font-size-button) em(30, $font-size-button);
+        padding-top: em(35);
+      }
+
+      @include min-width($_tablet-960px-breakpoint) {
+        width: em(750);
       }
     }
 
-    &--no {
-      padding: em(15, $font-size-button) em(20, $font-size-button);
-
-      @include min-width($_tablet-800px-breakpoint) {
-        padding: em(20, $font-size-button) em(30, $font-size-button);
-      }
+    .overlay-block__cta {
+      width: em(95, $font-size-button);
     }
   }
 }

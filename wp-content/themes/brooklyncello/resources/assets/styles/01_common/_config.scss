@@ -148,35 +148,41 @@ $assets: (
  *
  *   01. TYPOGRAPHY
  *
- *   02. BUTTONS
+ *   02. HEADINGS
  *
- *   03. CONTAINER / GRID / SPACING
+ *   03. BUTTONS
  *
- *   04. GLOBAL MEDIA QUERY BREAKPOINTS
+ *   04. CONTAINER / GRID / SPACING
  *
+ *   05. GLOBAL MEDIA QUERY BREAKPOINTS
  */
 
 /*
  * 01. TYPOGRAPHY
  */
-$font-size-base: 18px;
-$font-line-height: 1.95;
-$font-size-typescale: 1.25;
-// headings
-$font-size-h6: $font-size-base; // 18px
-$font-size-h5: $font-size-h6 * $font-size-typescale; // 22.50px
-$font-size-h4: $font-size-h5 * $font-size-typescale; // 28.13px
-$font-size-h3: $font-size-h4 * $font-size-typescale; // 35.16px
-$font-size-h2: $font-size-h3 * $font-size-typescale; // 43.95px
-$font-size-h1: $font-size-h2 * $font-size-typescale; // 54.93px
+$font-size-base: 16px;
+$font-size-base--desktop: $font-size-base * 1.5;
+
+$font-line-height: 1.5;
+$font-size-typescale: 1.414;
 
 /*
- * 02. BUTTONS
+ * 02. HEADINGS
  */
-$font-size-button: $font-size-base * 0.8; // 14.5px (with 18px as reference point)
+$font-size-h6: $font-size-base; // 16px
+$font-size-h5: $font-size-h6 * $font-size-typescale; // 22.62px
+$font-size-h4: $font-size-h5 * $font-size-typescale; // 31.99px
+$font-size-h3: $font-size-h4 * $font-size-typescale; // 45.23px
+$font-size-h2: $font-size-h3 * $font-size-typescale; // 63.96px
+$font-size-h1: $font-size-h2 * $font-size-typescale; // 90.44px
 
 /*
- * 03. CONTAINER / GRID / SPACING
+ * 03. BUTTONS
+ */
+$font-size-button: $font-size-base * 0.8; // 12.8px (with 16px as reference point)
+
+/*
+ * 04. CONTAINER / GRID / SPACING
  */
 // container
 $container-max-width: 1440px;
@@ -185,9 +191,8 @@ $container-gutter: 20px;
 $vertical-spacer: 75px;
 
 /*
- * 04. GLOBAL MEDIA QUERY BREAKPOINTS
+ * 05. GLOBAL MEDIA QUERY BREAKPOINTS
  */
-
 // mobile devices
 $_mobile-320px-breakpoint: (device: mobile, size: sm);
 $_mobile-480px-breakpoint: (device: mobile);

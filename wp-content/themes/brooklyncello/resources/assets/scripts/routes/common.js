@@ -40,16 +40,20 @@ export default {
     }
 
     // Age gate buttons
-    const ageGateYes = document.querySelector('.age-gate__button--yes');
+    const ageGateYes = document.querySelector('.overlay-block__cta--age-gate-yes');
 
     // Click event listener that sets cookie to pass age gate
     ageGateYes.addEventListener('click', (e) => {
       e.preventDefault();
 
       // Sets cookie with an expiration date of 3 days
-      Cookies.set('age-gate-passed', 'true', {
-        expires: 3,
-      });
+      if (!Cookies.get('age-gate-passed')) {
+        Cookies.set('age-gate-passed', 'true', {
+          expires: 3,
+        });
+
+        console.log(Cookies.get('age-gate-passed'));
+      }
 
       // Trigger window reload
       window.location.reload(true);
