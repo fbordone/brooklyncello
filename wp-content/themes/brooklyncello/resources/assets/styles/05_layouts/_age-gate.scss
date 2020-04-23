@@ -25,6 +25,12 @@ body.age-gate-active {
     background-size: cover;
 
     .overlay-block {
+      top: 42%;
+
+      @include min-width($_mobile-480px-breakpoint) {
+        top: 50%;
+      }
+
       @include min-width($_tablet-800px-breakpoint) {
         padding-top: em(35);
       }
