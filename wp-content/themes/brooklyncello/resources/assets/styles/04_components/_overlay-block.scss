@@ -9,7 +9,7 @@
   background-image: radial-gradient(c(white), c(red));
   padding: em(30) em(15);
   width: 80%;
-  border: em(1) solid c(black);
+  border: em(2) solid c(red, dark);
   opacity: 0.9;
 
   @include min-width($_tablet-800px-breakpoint) {
@@ -35,12 +35,17 @@
 
   h1 {
     font-size: em($font-size-h3);
-    letter-spacing: em(1, $font-size-h3);
+    letter-spacing: em(2, $font-size-h3);
     line-height: 1;
 
     @include min-width($_tablet-800px-breakpoint) {
-      font-size: em($font-size-h1);
-      letter-spacing: em(1, $font-size-h1);
+      font-size: em($font-size-h2);
+      letter-spacing: em(2, $font-size-h2);
+    }
+
+    @include min-width($_laptop-1280px-breakpoint) {
+      font-size: em($font-size-h1 * 1.2);
+      letter-spacing: em(2, $font-size-h1 * 1.2);
     }
   }
 
