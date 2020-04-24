@@ -18,17 +18,9 @@
 
     {{-- Mobile Nav --}}
     <nav class="banner__nav-header-mobile">
-      @if (has_nav_menu('nav_header_left'))
+      @if (has_nav_menu('nav_header'))
         {!! wp_nav_menu([
-          'theme_location' => 'nav_header_left',
-          'menu_class' => 'nav-header--mobile',
-          'container' => '',
-        ]) !!}
-      @endif
-
-      @if (has_nav_menu('nav_header_right'))
-        {!! wp_nav_menu([
-          'theme_location' => 'nav_header_right',
+          'theme_location' => 'nav_header',
           'menu_class' => 'nav-header--mobile',
           'container' => '',
         ]) !!}
@@ -37,23 +29,15 @@
 
     {{-- Desktop Nav --}}
     <nav class="banner__nav-header-desktop">
-      @if (has_nav_menu('nav_header_left'))
-        {!! wp_nav_menu([
-          'theme_location' => 'nav_header_left',
-          'menu_class' => 'nav-header--desktop',
-          'container' => '',
-        ]) !!}
-      @endif
-
       <a class="banner__link banner__link--desktop" href="{{ home_url('/') }}">
         <svg class="icon logo-brooklyncello">
           <use xlink:href="#logo-brooklyncello" href="#logo-brooklyncello">
         </svg>
       </a>
 
-      @if (has_nav_menu('nav_header_right'))
+      @if (has_nav_menu('nav_header'))
         {!! wp_nav_menu([
-          'theme_location' => 'nav_header_right',
+          'theme_location' => 'nav_header',
           'menu_class' => 'nav-header--desktop',
           'container' => '',
         ]) !!}
