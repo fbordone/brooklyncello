@@ -185,6 +185,7 @@ $_banner-height--desktop: 100px;
       }
 
       > a {
+        @include transition((properties: (color)));
         font-size: em(14.5);
         letter-spacing: em(0.5, 14.5);
         text-transform: uppercase;
@@ -196,8 +197,13 @@ $_banner-height--desktop: 100px;
         }
 
         @include min-width($_tablet-1120px-breakpoint) {
-          font-size: em($font-size-base * 1.1);
-          letter-spacing: em(0.5, $font-size-base * 1.1);
+          font-size: em($font-size-base * 1.05);
+          letter-spacing: em(0.5, $font-size-base * 1.05);
+        }
+
+        &:hover {
+          @include transition((properties: (color)));
+          color: c(red);
         }
       }
 
