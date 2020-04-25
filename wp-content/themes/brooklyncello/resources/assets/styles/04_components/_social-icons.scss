@@ -4,15 +4,20 @@
 
 .social-icons {
   @include flex-container((justify: center));
-  margin-top: em(30);
+  margin-top: em(20);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    margin-top: em(30);
+  }
 }
 
 .social-icons__item {
+  @include transition((properties: (transform)));
   border: em(1) solid c(white);
   width: 45px;
   height: 45px;
   text-align: center;
-  line-height: 3.2;
+  line-height: 3.5;
 
   &:not(:first-child) {
     margin-left: em(25);
@@ -20,5 +25,10 @@
     @include min-width($_tablet-800px-breakpoint) {
       margin-left: em(35);
     }
+  }
+
+  &:hover {
+    @include transition((properties: (transform)));
+    transform: scale(1.1);
   }
 }

@@ -24,17 +24,38 @@
     }
 
     .menu-item {
-      font-size: em(16);
-      margin-top: em(5, 16);
-      margin-bottom: em(5, 16);
-      letter-spacing: em(1, 16);
+      font-size: em($font-size-base);
+      margin-top: em(10, $font-size-base);
+      margin-bottom: em(5, $font-size-base);
+      letter-spacing: em(1, $font-size-base);
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
       color: c(black);
 
       @include min-width($_tablet-800px-breakpoint) {
-        margin: 0 em(30, 16);
+        margin: 0 em(30, $font-size-base);
+      }
+
+      @include min-width($_tablet-1120px-breakpoint) {
+        font-size: em($font-size-base * 1.05);
+        margin-left: em(30, $font-size-base * 1.05);
+        margin-right: em(30, $font-size-base * 1.05);
+        letter-spacing: em(1, $font-size-base * 1.05);
+      }
+
+      &.active {
+        color: c(white);
+        text-decoration: underline;
+      }
+
+      > a {
+        @include transition((properties: (color)));
+
+        &:hover {
+          @include transition((properties: (color)));
+          color: c(white);
+        }
       }
     }
   }
