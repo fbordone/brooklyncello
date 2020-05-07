@@ -133,4 +133,10 @@ add_action('pre_get_posts', function( $query ) {
         $query->set('orderby', 'menu_order');
         $query->set('posts_per_page', '-1');
     }
+    // modify products archive query
+    if ( is_post_type_archive('product') ) {
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'menu_order');
+        $query->set('posts_per_page', '-1');
+    }
 });

@@ -74,42 +74,6 @@
             ]
         },
         {
-            "key": "field_5e9cff3f28892",
-            "label": "Call To Action (copy)",
-            "name": "age_gate_cta_copy",
-            "type": "repeater",
-            "instructions": "Add up to 2 call to action buttons.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 2,
-            "layout": "table",
-            "button_label": "Add CTA",
-            "sub_fields": [
-                {
-                    "key": "field_5e9cff3f28893",
-                    "label": "Button",
-                    "name": "button",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": ""
-                }
-            ]
-        },
-        {
             "key": "field_5dcb9123fe93c",
             "label": "Background Image",
             "name": "age_gate_img",
@@ -342,6 +306,44 @@
                     "new_lines": ""
                 }
             ]
+        },
+        {
+            "key": "field_5eab935c91bc9",
+            "label": "Page IDs",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5eab931891bc8",
+            "label": "Product Archive Page",
+            "name": "product_archive_page",
+            "type": "post_object",
+            "instructions": "Select the Product archive page here. This is to combat a weird issue where content wasn't displaying on the Product archive page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
         }
     ],
     "location": [
@@ -361,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587347281
+    "modified": 1588302709
 }

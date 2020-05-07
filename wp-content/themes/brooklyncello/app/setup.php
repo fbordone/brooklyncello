@@ -155,7 +155,7 @@ add_action('init', function() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-carrot',
         'show_in_rest' => true,
-        'supports' => ['title'],
+        'supports' => ['title', 'thumbnail'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'products'],
         'query_var' => 'product',

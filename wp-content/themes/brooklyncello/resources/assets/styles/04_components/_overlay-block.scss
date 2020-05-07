@@ -92,9 +92,9 @@
 .overlay-block__cta {
   @include button {
     @include transition((properties: (background-color, border-color, color)));
-    background-color: c(black);
-    border: em(1, $font-size-button) solid c(black);
-    color: c(white);
+    background-color: transparent;
+    border: em(1.5, $font-size-button) solid c(black);
+    color: c(black);
     padding-top: em(15, $font-size-button);
     padding-bottom: em(15, $font-size-button);
     width: 40%;
