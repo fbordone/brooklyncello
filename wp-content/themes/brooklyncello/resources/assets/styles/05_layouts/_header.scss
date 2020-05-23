@@ -14,7 +14,7 @@ $_banner-height--desktop: 100px;
   height: em($_banner-height--mobile);
   z-index: z(nav);
   width: 100%;
-  background-color: white;
+  background-color: c(white);
 
   @include min-width($_tablet-800px-breakpoint) {
     height: em($_banner-height--desktop);
@@ -38,7 +38,13 @@ $_banner-height--desktop: 100px;
   padding-top: em(6.5);
 
   @include min-width($_tablet-800px-breakpoint) {
-    padding-top: em(2);
+    padding-top: 0;
+    padding-left: em(40);
+    padding-right: em(40);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    justify-content: space-between;
   }
 
   &--active-mobile-menu {
@@ -49,10 +55,6 @@ $_banner-height--desktop: 100px;
       @include transition;
       background-color: c(white);
     }
-  }
-
-  @include min-width($_tablet-800px-breakpoint) {
-    justify-content: center;
   }
 }
 
@@ -129,14 +131,18 @@ $_banner-height--desktop: 100px;
     }
 
     .menu-item {
-      font-size: em($font-size-base);
-      padding: em(25, $font-size-base);
+      font-size: em($font-size-base * 1.2);
+      padding: em(20, $font-size-base * 1.2);
       text-transform: uppercase;
       font-weight: bold;
 
       @include min-width($_mobile-640px-breakpoint) {
         font-size: em(22);
         padding: em(25, 22);
+      }
+
+      &.active {
+        text-decoration: underline;
       }
     }
   }
@@ -146,31 +152,64 @@ $_banner-height--desktop: 100px;
   @include hide;
 
   @include min-width($_tablet-800px-breakpoint) {
-    @include flex-container((justify: space-around));
+    @include flex-container;
     width: 100%;
   }
 
   @include min-width($_tablet-960px-breakpoint) {
-    max-width: em(960);
+    max-width: em(1400);
+    margin: 0 auto;
+  }
+
+  @include min-width($_tablet-1120px-breakpoint) {
+    padding-left: em(60);
   }
 
   .nav-header--desktop {
     @include flex-container;
+    padding-top: em(14);
 
     .menu-item {
+      line-height: em(15, 14.5);
+
       &:not(:first-child) {
-        margin-left: em(50, 16);
+        margin-left: em(30, 14.5);
 
         @include min-width($_tablet-960px-breakpoint) {
-          margin-left: em(100, 16);
+          margin-left: em(30, $font-size-base);
+        }
+
+        @include min-width($_tablet-1120px-breakpoint) {
+          margin-left: em(50, $font-size-base * 1.1);
         }
       }
 
       > a {
-        font-size: em(16);
-        letter-spacing: em(1, 16);
+        @include transition((properties: (color)));
+        font-size: em(14.5);
+        letter-spacing: em(0.5, 14.5);
         text-transform: uppercase;
         font-weight: bold;
+
+        @include min-width($_tablet-960px-breakpoint) {
+          font-size: em($font-size-base);
+          letter-spacing: em(0.5, $font-size-base);
+        }
+
+        @include min-width($_tablet-1120px-breakpoint) {
+          font-size: em($font-size-base * 1.05);
+          letter-spacing: em(0.5, $font-size-base * 1.05);
+        }
+
+        &:hover {
+          @include transition((properties: (color)));
+          color: c(red);
+        }
+      }
+
+      &.active {
+        text-decoration: underline;
+        color: c(red);
       }
     }
   }
