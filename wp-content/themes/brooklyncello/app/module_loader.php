@@ -29,7 +29,7 @@ trait ModuleLoader {
             'fields' => ['featured__title', 'featured__recipes'],
         ],
         'hero' => [
-            'fields' => ['hero__title', 'hero__title_size', 'hero__subtitle', 'hero__subtitle_size', 'hero__mobile_img', 'hero__desktop_img'],
+            'fields' => ['hero__copy', 'hero__cta', 'hero__mobile_img', 'hero__desktop_img'],
         ],
     ];
 

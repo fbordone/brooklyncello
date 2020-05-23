@@ -3,92 +3,59 @@
     "title": "Module - Hero",
     "fields": [
         {
-            "key": "field_5d71d34bd8555",
-            "label": "Title",
-            "name": "hero__title",
-            "type": "text",
-            "instructions": "Set the main title that will display over the image.",
+            "key": "field_5e9ce7cfaa7c7",
+            "label": "Copy",
+            "name": "hero__copy",
+            "type": "wysiwyg",
+            "instructions": "Enter the markup for the title and any other supplemental copy.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
-            "key": "field_5dc1056376fd0",
-            "label": "Title Size",
-            "name": "hero__title_size",
-            "type": "radio",
-            "instructions": "Set the main title size. Leave blank for default font size (72px).",
+            "key": "field_5e9d08b4d2205",
+            "label": "Call To Action",
+            "name": "hero__cta",
+            "type": "repeater",
+            "instructions": "Add up to 2 call to action buttons.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "smaller": "68px",
-                "large": "80px",
-                "larger": "90px"
-            },
-            "allow_null": 1,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_5dbf6977ea53f",
-            "label": "Subtitle",
-            "name": "hero__subtitle",
-            "type": "text",
-            "instructions": "Set the subtitle that will display underneath the main title.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5dc105d176fd2",
-            "label": "Subtitle Size",
-            "name": "hero__subtitle_size",
-            "type": "radio",
-            "instructions": "Set the subtitle size. Leave blank for default font size (72px).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "smaller": "68px",
-                "large": "80px",
-                "larger": "90px"
-            },
-            "allow_null": 1,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5e9d08ced2206",
+                    "label": "Button",
+                    "name": "button",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
         },
         {
             "key": "field_5d71d585f1f46",
@@ -156,5 +123,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1572934081
+    "modified": 1587350241
 }

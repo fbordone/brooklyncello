@@ -1,0 +1,119 @@
+/* ==============================================================================================
+// OVERLAY BLOCKS STYLINGS
+================================================================================================= */
+
+.overlay-block {
+  @include position(absolute, (top: 50%, left: 50%));
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-image: radial-gradient(c(white), c(red));
+  padding: em(30) em(15);
+  width: 80%;
+  border: em(2) solid c(red, dark);
+  opacity: 0.9;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    padding: em(25) em(35);
+    width: 90%;
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    width: 50%;
+  }
+
+  @include min-width($_laptop-1440px-breakpoint) {
+    width: em(700);
+  }
+
+  p {
+    line-height: 1.2;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: em($font-size-base--desktop);
+    }
+  }
+
+  h1 {
+    font-size: em($font-size-h3);
+    letter-spacing: em(2, $font-size-h3);
+    line-height: 1;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: em($font-size-h2);
+      letter-spacing: em(2, $font-size-h2);
+    }
+
+    @include min-width($_laptop-1280px-breakpoint) {
+      font-size: em($font-size-h1 * 1.2);
+      letter-spacing: em(2, $font-size-h1 * 1.2);
+    }
+  }
+
+  h2 {
+    font-size: em($font-size-h3);
+    letter-spacing: em(1, $font-size-h3);
+    line-height: 1;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: em($font-size-h2);
+      letter-spacing: em(1, $font-size-h2);
+    }
+
+    + p {
+      margin-top: em(10, $font-size-base);
+
+      @include min-width($_tablet-800px-breakpoint) {
+        margin-top: em(10, $font-size-base--desktop);
+      }
+    }
+  }
+
+  h3 {
+    font-size: em($font-size-h4);
+    letter-spacing: em(3, $font-size-h4);
+    margin-top: em(10, $font-size-h4);
+    line-height: 1;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: em($font-size-h3);
+      letter-spacing: em(3, $font-size-h3);
+      margin-top: em(10, $font-size-h3);
+    }
+  }
+}
+
+.overlay-block__cta-wrap {
+  margin-top: em(15, $font-size-button);
+
+  @include min-width($_tablet-800px-breakpoint) {
+    margin-top: em(25, $font-size-button);
+  }
+}
+
+.overlay-block__cta {
+  @include button {
+    @include transition((properties: (background-color, border-color, color)));
+    background-color: transparent;
+    border: em(1, $font-size-button) solid c(black);
+    color: c(black);
+    padding-top: em(15, $font-size-button);
+    padding-bottom: em(15, $font-size-button);
+    width: 40%;
+
+    @include min-width($_tablet-800px-breakpoint) {
+      width: 20%;
+    }
+
+    &:hover,
+    &:focus {
+      @include transition((properties: (background-color, border-color, color)));
+      background-color: c(red);
+      border-color: c(red);
+      color: c(white);
+    }
+  }
+
+  &:first-of-type {
+    margin-right: em(15);
+  }
+}

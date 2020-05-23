@@ -12,16 +12,11 @@
       </picture>
     </figure>
 
-    @if ( !empty($data['fields']['hero__title']) )
-      <div class="hero__content-wrap">
-        <h1 class="hero__title {{ !empty($data['fields']['hero__title_size']) ? "hero__title--{$data['fields']['hero__title_size']}" : '' }}">
-          {!! $data['fields']['hero__title'] !!}
-        </h1>
-
-        <h1 class="hero__subtitle {{ !empty($data['fields']['hero__subtitle_size']) ? "hero__subtitle--{$data['fields']['hero__subtitle_size']}" : '' }}">
-          {!! $data['fields']['hero__subtitle'] !!}
-        </h1>
-      </div>
+    @if ( !empty($data['fields']['hero__copy']) )
+      @include('components.overlay-block', ['data' => [
+        'copy' => $data['fields']['hero__copy'],
+        'cta' => $data['fields']['hero__cta']
+      ]])
     @endif
 
     @if ( $data['extras']['variant'] === 'archive-recipe' )

@@ -7,7 +7,7 @@
 @section('content')
   @if( have_posts() )
     {{-- Page Header --}}
-    <h1 class="archive__header">{{ __('Brooklyncello Cocktail Recipes', 'brooklyncello') }}</h1>
+    <h2 class="archive__header">{{ __('Brooklyncello Cocktail Recipes', 'brooklyncello') }}</h2>
 
     {{-- 'Hero' Section (Featured Recipe) --}}
     @isset($hero)
