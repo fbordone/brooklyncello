@@ -20,6 +20,41 @@
   }
 }
 
+.archive__content {
+  font-size: em($font-size-base * 1.1);
+  padding-left: em(20, $font-size-base * 1.1);
+  padding-right: em(20, $font-size-base * 1.1);
+  margin-bottom: em(15, $font-size-base * 1.1);
+  text-align: center;
+
+  @include min-width($_mobile-640px-breakpoint) {
+    padding-left: em(40, $font-size-base * 1.1);
+    padding-right: em(40, $font-size-base * 1.1);
+  }
+
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-base--desktop);
+    padding-left: em(20, $font-size-base--desktop);
+    padding-right: em(20, $font-size-base--desktop);
+    margin-bottom: em(15, $font-size-base--desktop);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-left: em(60, $font-size-base--desktop);
+    padding-right: em(60, $font-size-base--desktop);
+    margin-bottom: em(45, $font-size-base--desktop);
+  }
+
+  > a {
+    @include transition((properties: (color)));
+
+    &:hover {
+      @include transition((properties: (color)));
+      color: c(red);
+    }
+  }
+}
+
 .recipes {
   @include container((width: 1280px));
   margin-top: em(45);

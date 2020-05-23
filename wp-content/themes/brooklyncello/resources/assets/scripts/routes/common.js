@@ -51,8 +51,6 @@ export default {
         Cookies.set('age-gate-passed', 'true', {
           expires: 3,
         });
-
-        console.log(Cookies.get('age-gate-passed'));
       }
 
       // Trigger window reload
@@ -66,6 +64,54 @@ export default {
     const navBtn = document.querySelector('.banner__menu-btn');
     if (navBtn) {
       navBtn.addEventListener('click', handleToggleMenu.bind(navBtn, bannerWrap, icon, mobileNav), {passive: true});
+    }
+
+    // Slick slider for product archive page
+    const sliderWrap = document.querySelector('.slider__wrap');
+    if (sliderWrap) {
+      $('.slider__wrap').slick({
+        centerMode: true,
+        centerPadding: '180px',
+        dots: true,
+        nextArrow: false,
+        prevArrow: false,
+        slidesToScroll: 3,
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 960,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '260px',
+            },
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '210px',
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '150px',
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '85px',
+            },
+          },
+        ],
+      });
     }
   },
   finalize() {
