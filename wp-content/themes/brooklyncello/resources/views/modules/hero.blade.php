@@ -5,10 +5,10 @@
 @unless (!is_array($data) || empty($data))
   <section class="{{ $data['classes'] }}">
     <figure class="hero__img-wrap">
-      <picture>
+      <picture class="hero__img">
         <source srcset="{{ wp_get_attachment_image_srcset($data['fields']['hero__desktop_img']) }}" sizes="100vw" media="(min-width: 60em)">
         <source srcset="{{ wp_get_attachment_image_srcset($data['fields']['hero__mobile_img']) }}" sizes="100vw">
-        <img src="{{ wp_get_attachment_image_src($data['fields']['hero__mobile_img'])[0] }}">
+        <img src="{{ wp_get_attachment_image_src($data['fields']['hero__desktop_img'])[0] }}" alt="<?= get_post_meta($data['fields']['hero__desktop_img'], '_wp_attachment_image_alt', true) ?>">
       </picture>
     </figure>
 

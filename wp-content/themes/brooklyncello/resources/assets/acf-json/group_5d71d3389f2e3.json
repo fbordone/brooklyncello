@@ -7,7 +7,7 @@
             "label": "Copy",
             "name": "hero__copy",
             "type": "wysiwyg",
-            "instructions": "Enter the markup for the title and any other supplemental copy.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -86,7 +86,7 @@
             "label": "Desktop Image",
             "name": "hero__desktop_img",
             "type": "image",
-            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1440x550px<\/strong>",
+            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1920x1080px<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -123,5 +123,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1587350241
+    "modified": 1590286263
 }
