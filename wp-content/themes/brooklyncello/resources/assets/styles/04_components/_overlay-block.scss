@@ -97,12 +97,7 @@
     color: c(black);
     padding-top: em(15, $font-size-button);
     padding-bottom: em(15, $font-size-button);
-    width: 40%;
     font-weight: bold;
-
-    @include min-width($_tablet-800px-breakpoint) {
-      width: 20%;
-    }
 
     &:hover,
     &:focus {

@@ -4,20 +4,10 @@
 
 ================================================================================================= */
 .hero__img-wrap {
-  @include absolute-center((ratio: 100%, childElem: 'picture'));
+  object-fit: cover;
   width: 100%;
-
-  @include min-width($_mobile-480px-breakpoint) {
-    padding-bottom: 85%;
-  }
-
-  @include min-width($_tablet-800px-breakpoint) {
-    padding-bottom: 70%;
-  }
-
-  @include min-width($_tablet-960px-breakpoint) {
-    padding-bottom: 38%;
-  }
+  max-height: 550px;
+  overflow: hidden;
 }
 
 .hero__sticker-wrap {
