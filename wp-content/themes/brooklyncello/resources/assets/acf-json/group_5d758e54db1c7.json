@@ -324,6 +324,28 @@
             "endpoint": 0
         },
         {
+            "key": "field_5ecc6ab54fe13",
+            "label": "Recipes Page",
+            "name": "recipes__archive-page",
+            "type": "post_object",
+            "instructions": "[DEV ONLY] Set the Recipe archive page here. Allows the archive page ID to be available in associated controller (work-around).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_5eab931891bc8",
             "label": "Product Archive Page",
             "name": "product_archive_page",
@@ -363,5 +385,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590286453
+    "modified": 1590455081
 }

@@ -1,20 +1,28 @@
+{{--
+  Template Name: Recipes
+--}}
+
 @extends('layouts.app')
 
-@php
+{{-- @php
   $count = 0;
-@endphp
+@endphp --}}
 
 @section('content')
-  @if( have_posts() )
-    {{-- Page Header --}}
-    <h2 class="archive__header">{{ __('Brooklyncello Cocktail Recipes', 'brooklyncello') }}</h2>
-
-    {{-- 'Hero' Section (Featured Recipe) --}}
-    @isset($hero)
-      @include('modules.hero', ['data' => $hero])
+  @if ( have_posts() )
+    {{-- Page header --}}
+    @isset($data['title'])
+      <h2 class="archive__header">{{ $data['title'] }}</h2>
     @endisset
 
-    <section class="recipes">
+    {{-- Hero section (Featured Recipe) --}}
+    @isset($data['hero'])
+      @include('modules.hero', ['data' => $data['hero']])
+    @endisset
+
+    {{-- Recipe grid --}}
+    {{-- @dump($data['grid']) --}}
+    {{-- <section class="recipes">
       <h3 class="recipes__grid-header">Cocktail Recipes</h3>
 
       <div class="recipes__grid">
@@ -38,6 +46,6 @@
           @endif
         @endwhile
       </div>
-    </section>
+    </section> --}}
   @endif
 @endsection
