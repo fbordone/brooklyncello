@@ -16,7 +16,7 @@
       @include('modules.hero', ['data' => $data['hero']])
     @endisset
 
-    {{-- Recipe grid --}}
+    {{-- Recipe grid (Shows all recipes except the featured recipe) --}}
     @isset($data['recipes'])
       <section class="recipes">
         @isset($data['grid_title'])
