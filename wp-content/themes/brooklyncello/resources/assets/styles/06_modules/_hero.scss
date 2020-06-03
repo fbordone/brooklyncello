@@ -21,11 +21,11 @@
 
 .hero__sticker {
   @include inline-block;
-  font-size: em($font-size-base);
-  width: em(110, $font-size-base);
-  height: em(110, $font-size-base);
-  padding-top: em(37, $font-size-base);
-  line-height: em(22, $font-size-base);
+  font-size: em($font-size-base * 1.125);
+  width: em(110, $font-size-base * 1.125);
+  height: em(110, $font-size-base * 1.125);
+  padding-top: em(37, $font-size-base * 1.125);
+  line-height: em(22, $font-size-base * 1.125);
   background-color: c(red, dark);
   color: c(white);
   font-weight: bold;
@@ -52,7 +52,7 @@
 }
 
 .hero__supplemental-caption {
-  font-size: em(16);
+  font-size: em($font-size-base);
 
   @include min-width($_tablet-960px-breakpoint) {
     @include hide;
@@ -72,17 +72,27 @@
 }
 
 .hero__supplemental-cta {
+  @include transition((properties: (background-color, color)));
+
   @include button {
-    border: em(2, $font-size-button) solid c(white);
-    letter-spacing: em(1, $font-size-button);
-    max-width: em(500, $font-size-button);
-    padding: em(15, $font-size-button);
+    font-size: em($font-size-base);
+    border: em(2, $font-size-base) solid c(white);
+    letter-spacing: em(1, $font-size-base);
+    max-width: em(500, $font-size-base);
+    padding: em(15, $font-size-base);
     width: 100%;
     background-color: transparent;
   }
 
   @include min-width($_tablet-960px-breakpoint) {
-    max-width: em(150, $font-size-button);
-    padding: em(10, $font-size-button);
+    max-width: em(150, $font-size-base);
+    padding: em(10, $font-size-base);
+  }
+
+  &:hover,
+  &:active {
+    @include transition((properties: (background-color, color)));
+    color: c(black);
+    background-color: c(white);
   }
 }

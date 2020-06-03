@@ -10,16 +10,23 @@ class ArchiveRecipe extends Controller {
      */
     use ModuleLoader;
 
-    // ID of the current archive page
-    protected $_id;
+    // ID of the archive page
+    protected $archive_page_id;
+
+    // ID of the current featured recipe
+    protected $featured_recipe_id;
 
     /*
      * Initialize method to obtain ACF data
      */
     public function __before() {
         // get the archive recipe page ID
-        $this->_id = get_field('recipes__archive-page', 'option');
+        $this->archive_page_id = get_field('recipes__archive-page', 'option');
 
+        // get the featured recipe ID
+        $this->featured_recipe_id = get_field('recipes__featured', $this->archive_page_id);
+
+        // get ACF data
         $this->data();
     }
 
@@ -30,17 +37,18 @@ class ArchiveRecipe extends Controller {
         $acf_data = [
             'title' => $this->get_title(),
             'hero' => $this->get_hero(),
-            'grid' => $this->get_grid_data(),
+            'grid_title' => $this->get_grid_title(),
+            'recipes' => $this->get_grid_data(),
         ];
 
         return $acf_data;
     }
 
     /*
-     * Title helper function
+     * Main title helper function
      */
     private function get_title() {
-        $page_title = get_field('recipes__page_title', $this->_id);
+        $page_title = get_field('recipes__page_title', $this->archive_page_id);
 
         if (!$page_title) {
             return;
@@ -53,18 +61,16 @@ class ArchiveRecipe extends Controller {
      * Hero helper function
      */
     private function get_hero() {
-        $featured_recipe_id = get_field('recipes__featured', $this->_id);
-
         $hero_data = [
-            'featured_title' => get_the_title($featured_recipe_id),
-            'featured_slug' => get_permalink($featured_recipe_id),
+            'featured_title' => get_the_title($this->featured_recipe_id),
+            'featured_slug' => get_permalink($this->featured_recipe_id),
         ];
 
         $_hero = [
             'classes' => 'hero hero--archive-recipe',
             'fields' => [
-                'hero__mobile_img' => get_field('recipe__mobile_img', $featured_recipe_id),
-                'hero__desktop_img' => get_field('recipe__desktop_img', $featured_recipe_id),
+                'hero__mobile_img' => get_field('recipe__mobile_img', $this->featured_recipe_id),
+                'hero__desktop_img' => get_field('recipe__desktop_img', $this->featured_recipe_id),
             ],
             'extras' => [
                 'variant' => 'archive-recipe',
@@ -76,15 +82,35 @@ class ArchiveRecipe extends Controller {
     }
 
     /*
+     * Grid section title helper function
+     */
+    private function get_grid_title() {
+        $grid_title = get_field('recipes__grid_title', $this->archive_page_id);
+
+        if (!$grid_title) {
+            return;
+        }
+
+        return $grid_title;
+    }
+
+    /*
      * Grid data helper function
      */
     private function get_grid_data() {
         while (have_posts()) {
             the_post();
 
-            $test[] = get_permalink();
+            // exclude the featured recipe
+            if (get_the_ID() !== $this->featured_recipe_id) {
+                $data[] = [
+                    'link' => get_permalink(),
+                    'image' => get_post_thumbnail_id(),
+                    'title' => get_the_title(),
+                ];
+            }
         }
 
-        return $test;
+        return $data;
     }
 }
