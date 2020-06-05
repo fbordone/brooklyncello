@@ -52,7 +52,7 @@
 }
 
 .hero__supplemental-caption {
-  font-size: em($font-size-base);
+  font-size: em($font-size-base * 1.25);
 
   @include min-width($_tablet-960px-breakpoint) {
     @include hide;
@@ -61,14 +61,6 @@
 
 .hero__supplemental-header {
   letter-spacing: em(2, $font-size-h2);
-  margin-bottom: em(15, $font-size-h2);
-
-  @include min-width($_tablet-960px-breakpoint) {
-    font-size: em(50);
-    letter-spacing: em(2, 50);
-    margin-right: em(40, 50);
-    margin-bottom: 0;
-  }
 }
 
 .hero__supplemental-cta {
@@ -80,6 +72,7 @@
     letter-spacing: em(1, $font-size-base);
     max-width: em(500, $font-size-base);
     padding: em(15, $font-size-base);
+    margin-top: em(15, $font-size-base);
     width: 100%;
     background-color: transparent;
   }
@@ -87,6 +80,8 @@
   @include min-width($_tablet-960px-breakpoint) {
     max-width: em(150, $font-size-base);
     padding: em(10, $font-size-base);
+    margin-top: 0;
+    margin-left: em(40, $font-size-base);
   }
 
   &:hover,

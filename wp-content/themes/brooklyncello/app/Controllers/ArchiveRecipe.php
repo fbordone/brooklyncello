@@ -73,7 +73,7 @@ class ArchiveRecipe extends Controller {
                 'hero__desktop_img' => get_field('recipe__desktop_img', $this->featured_recipe_id),
             ],
             'extras' => [
-                'variant' => 'archive-recipe',
+                'variant' => 'recipes',
                 'supplemental-data' => $hero_data,
             ],
         ];

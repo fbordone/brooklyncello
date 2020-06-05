@@ -19,7 +19,7 @@
       ]])
     @endif
 
-    @if ( $data['extras']['variant'] === 'archive-recipe' )
+    @if ( $data['extras']['variant'] === 'recipes' )
       <div class="hero__sticker-wrap">
         <span class="hero__sticker">Featured Recipe</span>
       </div>
@@ -27,7 +27,10 @@
       <div class="hero__supplemental-wrap">
         <p class="hero__supplemental-caption">{{ __('Our Featured Recipe:', 'brooklyncello') }}</p>
         <h2 class="hero__supplemental-header">{!! $data['extras']['supplemental-data']['featured_title'] !!}</h2>
-        <a class="hero__supplemental-cta" href="{{ $data['extras']['supplemental-data']['featured_slug'] }}">{{ __('See Recipe', 'brooklyncello') }}</a>
+
+        @if ( !empty($data['extras']['supplemental-data']['featured_slug']) )
+          <a class="hero__supplemental-cta" href="{{ $data['extras']['supplemental-data']['featured_slug'] }}">{{ __('See Recipe', 'brooklyncello') }}</a>
+        @endif
       </div>
     @endif
   </section>

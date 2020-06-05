@@ -124,7 +124,7 @@ add_action('init', function() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-smiley',
         'show_in_rest' => true,
-        'supports' => ['title', 'editor', 'thumbnail'],
+        'supports' => ['title', 'thumbnail'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'recipes'],
         'query_var' => 'recipe',
