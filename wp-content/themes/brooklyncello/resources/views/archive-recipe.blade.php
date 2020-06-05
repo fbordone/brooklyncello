@@ -1,43 +1,45 @@
+{{--
+  Template Name: Recipes
+--}}
+
 @extends('layouts.app')
 
-@php
-  $count = 0;
-@endphp
-
 @section('content')
-  @if( have_posts() )
-    {{-- Page Header --}}
-    <h2 class="archive__header">{{ __('Brooklyncello Cocktail Recipes', 'brooklyncello') }}</h2>
-
-    {{-- 'Hero' Section (Featured Recipe) --}}
-    @isset($hero)
-      @include('modules.hero', ['data' => $hero])
+  @if (have_posts())
+    {{-- Page header --}}
+    @isset($data['title'])
+      <h2 class="archive__header">{{ $data['title'] }}</h2>
     @endisset
 
-    <section class="recipes">
-      <h3 class="recipes__grid-header">Cocktail Recipes</h3>
+    {{-- Hero section (Featured Recipe) --}}
+    @isset($data['hero'])
+      @include('modules.hero', ['data' => $data['hero']])
+    @endisset
 
-      <div class="recipes__grid">
-        @while ( have_posts() )
-          @php the_post() @endphp
-          @php $count++; @endphp
+    {{-- Recipe grid (Shows all recipes except the featured recipe) --}}
+    @isset($data['recipes'])
+      <section class="recipes">
+        @isset($data['grid_title'])
+          <h3 class="recipes__grid-header">{{ $data['grid_title'] }}</h3>
+        @endisset
 
-          @if( $count > 1 )
+        <div class="recipes__grid">
+          @foreach ($data['recipes'] as $recipe)
             <div class="recipe">
-              <a class="recipe__wrap" href="{{ get_permalink() }}">
+              <a class="recipe__wrap" href="{{ $recipe['link'] }}">
                 <figure class="recipe__img-wrap">
                   <img class="recipe__img"
-                    srcset="{{ wp_get_attachment_image_srcset( get_field('archive_recipe_thumbnail'), 'medium') }}"
+                    srcset="{{ wp_get_attachment_image_srcset($recipe['image'], 'medium') }}"
                     sizes="(min-width: 80em) 30em, (min-width: 60em) 50vw, 100vw"
-                    alt="{{ get_post_meta( get_field('archive_recipe_thumbnail'), '_wp_attachment_image_alt', true) }}">
+                    alt="{{ get_post_meta($recipe['image'], '_wp_attachment_image_alt', true) }}">
                 </figure>
 
-                <h3 class="recipe__header">{{ get_the_title() }}</h3>
+                <h3 class="recipe__header">{{ $recipe['title'] }}</h3>
               </a>
             </div>
-          @endif
-        @endwhile
-      </div>
-    </section>
+          @endforeach
+        </div>
+      </section>
+    @endisset
   @endif
 @endsection
