@@ -7,6 +7,12 @@
 /************* Internal variables ************/
 
 /************* General styles ************/
+.single-recipe {
+  .hero__sticker-wrap {
+    display: none;
+  }
+}
+
 .single-recipe__desc-wrap {
   @include container((width: 1120px));
   margin-top: em(30);
@@ -34,15 +40,41 @@
     padding-right: em(60, $font-size-base);
   }
 
+  strong {
+    color: c(gray);
+  }
+
+  p {
+    @include min-width($_tablet-960px-breakpoint) {
+      font-size: em($font-size-base--desktop);
+      line-height: em(35, $font-size-base--desktop);
+    }
+
+    a {
+      @include transition((properties: (color)));
+      color: c(red);
+
+      &:hover,
+      &:active {
+        @include transition((properties: (color)));
+        color: c(black);
+      }
+    }
+  }
+
   p + p {
     margin-top: em(20, $font-size-base);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      margin-top: em(20, $font-size-base--desktop);
+    }
   }
 
   p:last-child {
     margin-bottom: em(30, $font-size-base);
 
     @include min-width($_tablet-960px-breakpoint) {
-      margin-bottom: em(40, $font-size-base);
+      margin-bottom: em(40, $font-size-base--desktop);
     }
   }
 }
@@ -52,29 +84,32 @@
   margin-bottom: em(30);
 
   @include min-width($_tablet-960px-breakpoint) {
-    margin-bottom: em(50);
+    margin-bottom: em(38);
   }
 }
 
 .single-recipe__pill {
+  @include transition((properties: (color, transform)));
   display: inline-block;
   background-color: #e8e8e8;
   color: c(black);
-  font-size: em(16);
-  padding: em(7, 16) em(17, 16);
-  margin: em(4, 16) em(2, 16);
-  border-radius: em(16, 16);
+  font-size: em($font-size-base);
+  padding: em(7, $font-size-base) em(17, $font-size-base);
+  margin: em(4, $font-size-base);
+  border-radius: 1em;
   text-align: center;
   text-decoration: none;
 
   &:hover,
   &:active {
+    @include transition((properties: (color, transform)));
     color: c(white);
+    transform: scale(1.075);
   }
 }
 
 .recipe-details {
-  @include container((width: 1120px));
+  @include container((width: 960px));
   padding-top: em(7);
   padding-bottom: em(25);
 
@@ -84,7 +119,9 @@
 }
 
 .recipe-details__wrap {
-  @include flex-container((direction: column, align: flex-start));
+  @include min-width($_tablet-960px-breakpoint) {
+    @include flex-container((direction: row, align: flex-start, justify: center));
+  }
 }
 
 .recipe-details__ingredients {
@@ -92,12 +129,14 @@
 
   @include min-width($_tablet-960px-breakpoint) {
     margin-bottom: em(40);
+    width: 50%;
   }
 }
 
 .recipe-details__header {
   margin-bottom: em(10, $font-size-h3);
   letter-spacing: em(1, $font-size-h3);
+  color: c(red, dark);
 
   @include min-width($_tablet-960px-breakpoint) {
     font-size: em($font-size-h2);
@@ -115,30 +154,38 @@
   }
 }
 
+.recipe-details__methods {
+  @include min-width($_tablet-960px-breakpoint) {
+    width: 50%;
+  }
+}
+
 .recipe-details__methods-list {
   counter-reset: item;
 }
 
-.recipe-details__ingredient,
-.recipe-details__method {
-  font-size: em(16);
+.recipe-details__ingredient {
+  font-size: em($font-size-base);
+  font-weight: bold;
 
   @include min-width($_tablet-960px-breakpoint) {
-    font-size: em($font-size-base);
+    font-size: em($font-size-base--desktop);
   }
 }
 
 .recipe-details__method {
-  line-height: em(25, 16);
-  margin-bottom: em(13, 16);
+  font-size: em($font-size-base);
+  font-weight: bold;
+  line-height: em(25, $font-size-base);
+  margin-bottom: em(13, $font-size-base);
   counter-increment: item;
 
   &::before {
     content: counter(item);
     display: inline-block;
-    margin-right: em(8, 16);
-    width: em(27, 16);
-    border: em(1, 16) solid c(black);
+    margin-right: em(8, $font-size-base);
+    width: em(27, $font-size-base);
+    border: em(1, $font-size-base) solid c(black);
     border-radius: 100%;
     text-align: center;
   }
