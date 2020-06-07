@@ -3,7 +3,13 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     <section class="default-content">
-      <div class="default-content__copy">{!! get_the_content() !!}</div>
+      <h1 class="default-content__title">{{ get_the_title() }}</h1>
+
+      <div class="default-content__copy">
+        @if (!empty($content = the_content()))
+          {{ $content }}
+        @endif
+      </div>
     </section>
   @endwhile
 @endsection

@@ -50,8 +50,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'nav_header_left' => __('Left Header Navigation Menu', 'brooklyncello'),
-        'nav_header_right' => __('Right Header Navigation Menu', 'brooklyncello'),
+        'nav_header' => __('Header Navigation Menu', 'brooklyncello'),
         'nav_footer' => __('Footer Navigation Menu', 'brooklyncello'),
     ]);
 
@@ -125,7 +124,7 @@ add_action('init', function() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-smiley',
         'show_in_rest' => true,
-        'supports' => ['title', 'editor'],
+        'supports' => ['title', 'thumbnail'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'recipes'],
         'query_var' => 'recipe',
@@ -156,7 +155,7 @@ add_action('init', function() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-carrot',
         'show_in_rest' => true,
-        'supports' => ['title'],
+        'supports' => ['title', 'thumbnail'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'products'],
         'query_var' => 'product',

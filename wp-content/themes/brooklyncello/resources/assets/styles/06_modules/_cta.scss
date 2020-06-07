@@ -59,7 +59,14 @@
     }
 
     > a {
+      @include transition((properties: (color)));
       color: c(red, dark);
+
+      &:hover,
+      &:active {
+        @include transition((properties: (color)));
+        color: c(red);
+      }
     }
   }
 }
@@ -69,6 +76,15 @@
     background-color: c(red, dark);
     border: em(1) solid c(red, dark);
     color: c(white) !important;
+    transition-duration: 300ms;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    @include transition((properties: (background-color)));
+    background-color: c(red);
   }
 }
 

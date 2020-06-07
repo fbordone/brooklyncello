@@ -57,10 +57,8 @@ class App extends Controller {
     public function age_gate_data() {
         $data = [
             'img'  => get_field('age_gate_img', 'option'),
-            'title' => get_field('age_gate_title', 'option'),
-            'subtitle' => get_field('age_gate_subtitle', 'option'),
-            'yes-btn' => get_field('age_gate_yes', 'option'),
-            'no-btn' => get_field('age_gate_no', 'option'),
+            'copy' => get_field('age_gate_copy', 'option'),
+            'cta' => get_field('age_gate_cta', 'option'),
         ];
 
         return $data;

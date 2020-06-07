@@ -40,16 +40,18 @@ export default {
     }
 
     // Age gate buttons
-    const ageGateYes = document.querySelector('.age-gate__button--yes');
+    const ageGateYes = document.querySelector('.overlay-block__cta--age-gate-yes');
 
     // Click event listener that sets cookie to pass age gate
     ageGateYes.addEventListener('click', (e) => {
       e.preventDefault();
 
       // Sets cookie with an expiration date of 3 days
-      Cookies.set('age-gate-passed', 'true', {
-        expires: 3,
-      });
+      if (!Cookies.get('age-gate-passed')) {
+        Cookies.set('age-gate-passed', 'true', {
+          expires: 3,
+        });
+      }
 
       // Trigger window reload
       window.location.reload(true);
@@ -62,6 +64,54 @@ export default {
     const navBtn = document.querySelector('.banner__menu-btn');
     if (navBtn) {
       navBtn.addEventListener('click', handleToggleMenu.bind(navBtn, bannerWrap, icon, mobileNav), {passive: true});
+    }
+
+    // Slick slider for product archive page
+    const sliderWrap = document.querySelector('.slider__wrap');
+    if (sliderWrap) {
+      $('.slider__wrap').slick({
+        centerMode: true,
+        centerPadding: '180px',
+        dots: true,
+        nextArrow: false,
+        prevArrow: false,
+        slidesToScroll: 3,
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 960,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '260px',
+            },
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '210px',
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '150px',
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              centerPadding: '85px',
+            },
+          },
+        ],
+      });
     }
   },
   finalize() {

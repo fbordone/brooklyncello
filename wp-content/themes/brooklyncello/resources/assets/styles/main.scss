@@ -10,7 +10,7 @@
 /* NPM DEPENDENCIES */
 // Prefix your imports with `~` to grab from node_modules/
 // @see https://github.com/webpack-contrib/sass-loader#imports
-// @import "~some-node-module";
+@import "~slick-carousel/slick/slick";
 
 /* ==============================================================================================
 
@@ -52,6 +52,8 @@
 
 /* COMPONENTS */
 @import "04_components/_buttons";
+@import "04_components/_overlay-block";
+@import "04_components/_slider";
 @import "04_components/_social-icons";
 
 /* LAYOUTS */

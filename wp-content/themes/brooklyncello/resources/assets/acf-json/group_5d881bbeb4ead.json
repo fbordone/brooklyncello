@@ -1,101 +1,7 @@
 {
     "key": "group_5d881bbeb4ead",
-    "title": "Details – Recipes",
+    "title": "Recipes - Single",
     "fields": [
-        {
-            "key": "field_5da7b9bc830c6",
-            "label": "General",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5da7ba3d03240",
-            "label": "Thumbnail Image",
-            "name": "archive_recipe_thumbnail",
-            "type": "image",
-            "instructions": "Upload a thumbnail image for this recipe. This will display on the 'Blog' listings page. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>480x480px<\/strong>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "w320",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "jpg, jpeg"
-        },
-        {
-            "key": "field_5d881c666e872",
-            "label": "Featured Recipe",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5dd73cb456836",
-            "label": "",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "<strong>NOTE:<\/strong> This section will only display if the recipe is \"featured\". To set this recipe as \"featured\": \r\n\r\n1) Hover over \"Recipes\" on the left sidebar\r\n2) Click \"All Recipes\", you will now see the full listing of recipe posts\r\n3) The first recipe on this list, by default, will be the \"featured\" recipe. If you want to make another recipe \"featured\", drag and drop whichever recipe you'd like into the first slot of the list.\r\n\r\nWhen you visit https:\/\/brooklyncello.com\/recipes\/, the \"featured\" recipe will be displayed at the top of the page. With that said, the input fields below should only be filled out if you intend on this recipe to be \"featured\".",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5d8d9785733f4",
-            "label": "Hero",
-            "name": "archive_recipe_hero",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5d71d3389f2e3"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
-        },
         {
             "key": "field_5dd73efa168be",
             "label": "Hero Section",
@@ -113,27 +19,58 @@
             "endpoint": 0
         },
         {
-            "key": "field_5dd73f0f168bf",
-            "label": "",
-            "name": "",
-            "type": "message",
-            "instructions": "",
+            "key": "field_5ed5ec1e7049c",
+            "label": "Mobile Image",
+            "name": "recipe__mobile_img",
+            "type": "image",
+            "instructions": "Upload a <strong>mobile<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x960px<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "message": "<strong>NOTE:<\/strong> This section pertains to the hero section at the top of single recipe pages, for example: https:\/\/brooklyncello.com\/recipes\/park-slope\/",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
         },
         {
-            "key": "field_5dd73f89168c0",
-            "label": "Hero",
-            "name": "single_recipe_hero",
-            "type": "clone",
+            "key": "field_5ed5ec407049d",
+            "label": "Desktop Image",
+            "name": "recipe__desktop_img",
+            "type": "image",
+            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1440x550px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5ed88a568c697",
+            "label": "Description Section",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -142,13 +79,27 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5d71d3389f2e3"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ed889fb8c696",
+            "label": "Description",
+            "name": "recipe__desc",
+            "type": "wysiwyg",
+            "instructions": "Set the recipe description to be displayed directly below the hero image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5dddd9a74c4d0",
@@ -169,7 +120,7 @@
         {
             "key": "field_5dddd9f54c4d1",
             "label": "Ingredient List",
-            "name": "single_recipe_ingredients_list",
+            "name": "recipe__ingredients",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -225,7 +176,7 @@
         {
             "key": "field_5ddddbf13c278",
             "label": "Methods List",
-            "name": "single_recipe_methods_list",
+            "name": "recipe__methods",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -280,5 +231,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1575054752
+    "modified": 1591328012
 }

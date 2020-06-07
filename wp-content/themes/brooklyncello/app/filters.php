@@ -80,10 +80,10 @@ add_filter('template_include', function ($template) {
 add_action('init', function () {
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page([
-            'page_title'    => __('Brooklyncello Theme Options', 'brooklyncello'),
-            'menu_title'    => __('Brooklyncello Options', 'brooklyncello'),
-            'menu_slug'     => 'brooklyncello-theme-options',
-            'parent_slug'   => 'options-general.php',
+            'page_title'    => __('Theme Settings', 'brooklyncello'),
+            'menu_title'    => __('Theme Settings', 'brooklyncello'),
+            'menu_slug'     => 'theme-settings',
+            'capability'    => 'edit_posts',
             'redirect'      => false,
             'autoload'      => true,
         ]);
@@ -132,5 +132,39 @@ add_action('pre_get_posts', function( $query ) {
         $query->set('order', 'ASC');
         $query->set('orderby', 'menu_order');
         $query->set('posts_per_page', '-1');
+        $query->set('post_status', 'publish');
+    }
+    // modify products archive query
+    if ( is_post_type_archive('product') ) {
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'menu_order');
+        $query->set('posts_per_page', '-1');
     }
 });
+
+/**
+ * Hide editor on specific pages in admin
+ */
+add_filter('use_block_editor_for_post_type', function ($can_edit, $post_type) {
+    if (!is_admin() || empty($_GET['post'])) {
+        return false;
+    }
+
+    $post_id = intval($_GET['post']);
+
+    $excluded_templates = [
+        'views/archive-recipe.blade.php',
+    ];
+
+    if (empty($post_id)) {
+        return false;
+    }
+
+    if (in_array(get_page_template_slug($post_id), $excluded_templates)) {
+        remove_post_type_support('page', 'editor');
+
+        $can_edit = false;
+    }
+
+    return $can_edit;
+}, 10, 2);

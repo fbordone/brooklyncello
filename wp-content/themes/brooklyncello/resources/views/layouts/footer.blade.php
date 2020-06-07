@@ -12,7 +12,7 @@
 
     @include('components.social-icons', ['data' => $social_icons])
 
-    <div class="footer__copyright">{!! $copyright !!}</div>
+    <div class="footer__copyright">{!! str_replace( '%year%', date('Y'), $copyright ) !!}</div>
 
     <ul class="footer__legal-list">
       <li class="footer__legal-item">

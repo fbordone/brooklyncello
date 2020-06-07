@@ -4,21 +4,54 @@
 
 ================================================================================================= */
 
-/************* Internal variables ************/
-$_header-font-size--desktop: $font-size-h1*1.5;
-
 /************* General styles ************/
 .archive__header {
-  padding: em(30, $font-size-h1) em(25, $font-size-h1) em(25, $font-size-h1);
-  letter-spacing: em(0.5, $font-size-h1);
-  line-height: em(55, $font-size-h1);
+  font-size: em($font-size-h2);
+  padding: em(30, $font-size-h2) em(25, $font-size-h2) em(25, $font-size-h2);
+  letter-spacing: em(0.5, $font-size-h2);
+  line-height: em(55, $font-size-h2);
   text-align: center;
 
   @include min-width($_tablet-800px-breakpoint) {
-    font-size: em($_header-font-size--desktop);
-    padding: em(45, $_header-font-size--desktop) em(25, $_header-font-size--desktop) em(35, $_header-font-size--desktop);
-    letter-spacing: em(0.5, $_header-font-size--desktop);
-    line-height: em(75, $_header-font-size--desktop);
+    font-size: em($font-size-h1);
+    padding: em(45, $font-size-h1) em(25, $font-size-h1) em(35, $font-size-h1);
+    letter-spacing: em(0.5, $font-size-h1);
+    line-height: em(75, $font-size-h1);
+  }
+}
+
+.archive__content {
+  font-size: em($font-size-base * 1.1);
+  padding-left: em(20, $font-size-base * 1.1);
+  padding-right: em(20, $font-size-base * 1.1);
+  margin-bottom: em(15, $font-size-base * 1.1);
+  text-align: center;
+
+  @include min-width($_mobile-640px-breakpoint) {
+    padding-left: em(40, $font-size-base * 1.1);
+    padding-right: em(40, $font-size-base * 1.1);
+  }
+
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-base--desktop);
+    padding-left: em(20, $font-size-base--desktop);
+    padding-right: em(20, $font-size-base--desktop);
+    margin-bottom: em(15, $font-size-base--desktop);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    padding-left: em(60, $font-size-base--desktop);
+    padding-right: em(60, $font-size-base--desktop);
+    margin-bottom: em(45, $font-size-base--desktop);
+  }
+
+  > a {
+    @include transition((properties: (color)));
+
+    &:hover {
+      @include transition((properties: (color)));
+      color: c(red);
+    }
   }
 }
 
