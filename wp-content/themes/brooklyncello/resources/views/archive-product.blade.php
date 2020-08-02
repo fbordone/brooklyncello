@@ -3,21 +3,21 @@
   Template Post Type: page
 --}}
 
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
-  @if( have_posts() )
+  @if( have_posts() ) --}}
     {{-- Page Header --}}
-    <h2 class="archive__header">{{ __('Brooklyncello Products', 'brooklyncello') }}</h2>
+    {{-- <h2 class="archive__header">{{ __('Brooklyncello Products', 'brooklyncello') }}</h2> --}}
 
     {{-- 'Content' section --}}
-    @isset($content)
+    {{-- @isset($content)
       <p class="archive__content">{!! $content !!}</p>
-    @endisset
+    @endisset --}}
 
     {{-- 'Product' slider section --}}
-    @isset($slides)
+    {{-- @isset($slides)
       @include('components.slider', ['data' => $slides])
     @endisset
   @endif
-@endsection
+@endsection --}}
