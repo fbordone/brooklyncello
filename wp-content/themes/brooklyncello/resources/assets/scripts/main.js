@@ -5,7 +5,6 @@ import '../styles/fonts.scss';
 
 // import external dependencies
 import 'jquery';
-import 'slick-carousel';
 
 // Import everything from autoload
 import './autoload/**/*'
