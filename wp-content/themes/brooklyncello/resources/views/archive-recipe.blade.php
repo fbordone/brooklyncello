@@ -34,7 +34,7 @@
                     alt="{{ get_post_meta($recipe['image'], '_wp_attachment_image_alt', true) }}">
                 </figure>
 
-                <h3 class="recipe__header">{{ $recipe['title'] }}</h3>
+                <h3 class="recipe__header">{!! $recipe['title'] !!}</h3>
               </a>
             </div>
           @endforeach

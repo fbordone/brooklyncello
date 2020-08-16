@@ -344,28 +344,6 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
-        },
-        {
-            "key": "field_5eab931891bc8",
-            "label": "Product Archive Page",
-            "name": "product_archive_page",
-            "type": "post_object",
-            "instructions": "Select the Product archive page here. This is to combat a weird issue where content wasn't displaying on the Product archive page.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
         }
     ],
     "location": [
@@ -385,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590455081
+    "modified": 1597602582
 }

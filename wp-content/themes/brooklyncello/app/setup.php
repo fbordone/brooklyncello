@@ -156,7 +156,7 @@ add_action('init', function() {
         'menu_icon' => 'dashicons-carrot',
         'show_in_rest' => true,
         'supports' => ['title', 'thumbnail'],
-        'has_archive' => true,
+        'has_archive' => false,
         'rewrite' => ['slug' => 'products'],
         'query_var' => 'product',
     ];
