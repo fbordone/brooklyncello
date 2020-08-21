@@ -11,43 +11,88 @@ class SingleProduct extends Controller {
      */
     use ModuleLoader;
 
-   /*
-    * 'Content Three' section
-    *
-    * @uses `App\ModuleLoader->get_module()`
-    * @uses `../../resources/views/modules/content.blade.php`
-    */
-    public function product_content() {
-        $content_module = $this->get_module([
-            'module' => 'content',
-            'prefix' => 'product__content',
-            'classes' => [
-                'content-block content-block--product'
-            ],
-        ]);
+    // ID of the current product post
+    protected $product_id;
 
-        if ( $content_module['fields']['content__flip'] ) {
-            $content_module['classes'] .= ' content-block--reversed';
-        }
+    /*
+     * Initialize method to obtain ACF data
+     */
+    public function __before() {
+        // obtain the ID of the current product post
+        $this->product_id = get_the_ID();
 
-        return $content_module;
+        // get ACF data
+        $this->data();
     }
 
-    public function get_tag_data() {
-        $tags = get_field('product__related-recipes', get_the_ID());
-        $tag_data = [];
+    /*
+     * Obtain ACF data for single recipe
+     */
+    public function data() {
+        $acf_data = [
+            'title' => get_the_title(),
+            'hero' => $this->get_hero(),
+            'thumbnail' => $this->get_thumbnail(),
+            'desc' => $this->get_description(),
+            'other_products' => $this->get_other_products(),
+        ];
 
-        if ($tags) {
-            foreach ($tags as $tag) {
-                $data = [
-                    'tag_name' => get_the_title($tag),
-                    'tag_link' => get_permalink($tag),
-                ];
+        return $acf_data;
+    }
 
-                $tag_data[] = $data;
-            }
+    /*
+     * Hero helper function
+     */
+    private function get_hero() {
+        $hero_data = [
+            'featured_title' => get_the_title(),
+        ];
+
+        $_hero = [
+            'classes' => 'hero hero--single-product',
+            'fields' => [
+                'hero__mobile_img' => get_field('product__mobile_img', $this->product_id),
+                'hero__desktop_img' => get_field('product__desktop_img', $this->product_id),
+            ],
+            'extras' => [
+                'variant' => 'recipes',
+                'supplemental-data' => $hero_data,
+            ],
+        ];
+
+        return $_hero;
+    }
+
+    /*
+     * Thumbnail helper function
+     */
+    private function get_thumbnail() {
+        return get_the_post_thumbnail($this->product_id);
+    }
+
+    /*
+     * Description helper function
+     */
+    private function get_description() {
+        $description = get_field('product__desc', $this->recipe_id);
+
+        if (!$description) {
+            return;
         }
 
-        return $tag_data;
+        return $description;
+    }
+
+    /*
+     * Other products helper function
+     */
+    public function get_other_products() {
+        return $this->get_module([
+            'module' => 'featured',
+            'prefix' => 'product__other_products',
+            'classes' => [
+                'featured featured--single-product'
+            ],
+        ]);
     }
 }

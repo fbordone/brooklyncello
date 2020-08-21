@@ -7,19 +7,88 @@
 /************* Internal variables ************/
 
 /************* General styles ************/
-.single-product__header {
-  margin-bottom: em(15, $font-size-h1);
-  text-align: center;
-
-  @include min-width($_tablet-960px-breakpoint) {
-    margin: em(20, $font-size-h1) 0 em(30, $font-size-h1) 0;
+.single-product {
+  .hero__sticker-wrap,
+  .hero__supplemental-caption {
+    display: none;
   }
-}
 
-.single-product__content {
-  @include container((width: 1280px));
+  &__img-wrap {
+    img {
+      max-height: em(550);
+      width: auto;
+      margin: 0 auto;
 
-  .single-recipe__pill-wrap {
-    text-align: center;
+      @include min-width($_tablet-800px-breakpoint) {
+        max-height: em(750);
+      }
+    }
+  }
+
+  &__desc {
+    @include container((width: 1120px));
+  }
+
+  &__desc-wrap {
+    padding-bottom: em(40);
+
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: em($font-size-base--desktop);
+    }
+
+    h3 {
+      font-size: em($font-size-h4);
+      letter-spacing: em(1, $font-size-h4);
+      margin: em(7, $font-size-h4) 0;
+      line-height: 1em;
+
+      @include min-width($_tablet-800px-breakpoint) {
+        margin-top: em(30, $font-size-h4);
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: em(30, $font-size-base);
+      margin-bottom: em(25, $font-size-base);
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    ol {
+      list-style-type: decimal;
+
+      li {
+        margin-bottom: em(10);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: em(20, $font-size-base);
+
+      @include min-width($_tablet-800px-breakpoint) {
+        margin-bottom: em(20, $font-size-base--desktop);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      @include transition((properties: (color)));
+      color: c(red, dark);
+
+      &:hover {
+        @include transition((properties: (color)));
+        color: c(red);
+      }
+    }
   }
 }
