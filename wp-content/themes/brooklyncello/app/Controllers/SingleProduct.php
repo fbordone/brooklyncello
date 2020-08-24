@@ -34,7 +34,6 @@ class SingleProduct extends Controller {
             'hero' => $this->get_hero(),
             'thumbnail' => $this->get_thumbnail(),
             'desc' => $this->get_description(),
-            'other_products' => $this->get_other_products(),
         ];
 
         return $acf_data;
