@@ -1,10 +1,10 @@
 {
     "key": "group_5df047ae1a72e",
-    "title": "Details – Products",
+    "title": "Products - Single",
     "fields": [
         {
-            "key": "field_5df047ae20a87",
-            "label": "Content",
+            "key": "field_5f361a15add6f",
+            "label": "Hero Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,10 +19,58 @@
             "endpoint": 0
         },
         {
-            "key": "field_5df047d4261a8",
-            "label": "Product content",
-            "name": "product__content",
-            "type": "clone",
+            "key": "field_5f361a5f6185d",
+            "label": "Mobile Image",
+            "name": "product__mobile_img",
+            "type": "image",
+            "instructions": "Upload a <strong>mobile<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>960x960px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5f361a8e96544",
+            "label": "Desktop Image",
+            "name": "product__desktop_img",
+            "type": "image",
+            "instructions": "Upload a <strong>desktop<\/strong> optimized image. Required file types: <strong>jpg\/jpeg<\/strong><\/br> Suggested dimensions: <strong>1440x550px<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "w320",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_5f361b0290d43",
+            "label": "Description Section",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,20 +79,15 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5dc1ec4728efe"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_5df04d2e8215c",
-            "label": "Related Recipes",
-            "name": "product__related-recipes",
-            "type": "relationship",
-            "instructions": "Select the cocktails that are related to this 'cello.",
+            "key": "field_5f361b16a2550",
+            "label": "Description",
+            "name": "product__desc",
+            "type": "wysiwyg",
+            "instructions": "Set the product description to be displayed directly below the hero image.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -52,17 +95,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "recipe"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "id"
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -82,5 +119,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1576029747
+    "modified": 1598034038
 }

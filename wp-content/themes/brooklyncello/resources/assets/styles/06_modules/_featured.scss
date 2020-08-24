@@ -10,6 +10,10 @@
 .featured {
   @include container((width: 1280px));
   text-align: center;
+
+  &--home {
+    padding-top: em(30);
+  }
 }
 
 .featured__title {
