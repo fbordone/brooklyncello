@@ -70,25 +70,6 @@ class FrontPage extends Controller {
     }
 
     /*
-     * 'CTA' section 2
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/cta.blade.php`
-     */
-    public function cta_two() {
-        return $this->get_module([
-            'module' => 'cta',
-            'prefix' => 'home_cta_two',
-            'classes' => [
-                'cta cta--home-two'
-            ],
-            'extras' => [
-                'variant' => '',
-            ],
-        ]);
-    }
-
-    /*
      * 'Featured' section
      *
      * @uses `App\ModuleLoader->get_module()`

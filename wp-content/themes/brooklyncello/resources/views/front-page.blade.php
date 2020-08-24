@@ -21,11 +21,6 @@
       @include('modules.hero', ['data' => $banner])
     @endisset
 
-    {{-- 'CTA' section 2 --}}
-    @isset($cta_two)
-      @include('modules.cta', ['data' => $cta_two])
-    @endisset
-
     {{-- 'Featured' section --}}
     @isset($featured)
       @include('modules.featured', ['data' => $featured])

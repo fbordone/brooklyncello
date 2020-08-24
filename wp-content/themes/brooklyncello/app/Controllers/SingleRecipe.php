@@ -11,14 +11,14 @@ class SingleRecipe extends Controller {
      */
     use ModuleLoader;
 
-    // ID of the archive page
+    // ID of the current recipe post
     protected $recipe_id;
 
     /*
      * Initialize method to obtain ACF data
      */
     public function __before() {
-        // obtain the ID of the recipe current post
+        // obtain the ID of the current recipe post
         $this->recipe_id = get_the_ID();
 
         // get ACF data
@@ -98,6 +98,9 @@ class SingleRecipe extends Controller {
         return $tag_data;
     }
 
+    /*
+     * Ingredients helper function
+     */
     private function get_ingredients() {
         $ingredients = get_field('recipe__ingredients', $this->recipe_id);
 
@@ -108,6 +111,9 @@ class SingleRecipe extends Controller {
         return array_column($ingredients, 'ingredient');
     }
 
+    /*
+     * Methods helper function
+     */
     private function get_methods() {
         $methods = get_field('recipe__methods', $this->recipe_id);
 

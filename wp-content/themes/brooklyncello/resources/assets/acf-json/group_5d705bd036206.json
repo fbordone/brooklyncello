@@ -114,43 +114,6 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5de306dc49cff",
-            "label": "Call to Action Section 2",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5de306d449cfe",
-            "label": "Call to Action 2",
-            "name": "home_cta_two",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5de15d9fb011d"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
-        },
-        {
             "key": "field_5de1677cecb32",
             "label": "Featured Section",
             "name": "",
@@ -279,5 +242,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1575189451
+    "modified": 1598037617
 }

@@ -2,21 +2,25 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    <div class="single-product__content">
-      <h1 class="single-product__header">{{ get_the_title() }}</h1>
+    {{-- Hero section --}}
+    @isset($data['hero'])
+      @include('modules.hero', ['data' => $data['hero']])
+    @endisset
 
-      {{-- 'Content One' section --}}
-      @isset($product_content)
-        @include('modules.content', ['data' => $product_content])
-      @endisset
+    {{-- Bottle Image section --}}
+    <section class="single-product__img">
+      <figure class="single-product__img-wrap">
+        {!! $data['thumbnail'] !!}
+      </figure>
+    </section>
 
-      @if ( !empty($get_tag_data) )
-        <div class="single-recipe__pill-wrap">
-          @foreach ($get_tag_data as $tag_data)
-            <a href="{{ $tag_data['tag_link'] }}" class="single-recipe__pill">{!! $tag_data['tag_name'] !!}</a>
-          @endforeach
-        </div>
-      @endif
-    </div>
+    {{-- Description section --}}
+    <section class="single-product__desc">
+      <div class="single-product__desc-wrap">
+        @if (!empty($description = $data['desc']))
+          {!! $description !!}
+        @endif
+      </div>
+    </section>
   @endwhile
 @endsection
