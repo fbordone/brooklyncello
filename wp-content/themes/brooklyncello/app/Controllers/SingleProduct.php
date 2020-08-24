@@ -82,17 +82,4 @@ class SingleProduct extends Controller {
 
         return $description;
     }
-
-    /*
-     * Other products helper function
-     */
-    public function get_other_products() {
-        return $this->get_module([
-            'module' => 'featured',
-            'prefix' => 'product__other_products',
-            'classes' => [
-                'featured featured--single-product'
-            ],
-        ]);
-    }
 }
