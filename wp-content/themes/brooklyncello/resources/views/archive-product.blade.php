@@ -1,5 +1,5 @@
 {{--
-  Template Name: Recipes
+  Template Name: Products
 --}}
 
 @extends('layouts.app')
@@ -8,15 +8,15 @@
   @if (have_posts())
     {{-- Page header --}}
     @isset($data['title'])
-      <h2 class="archive__recipe-header">{{ $data['title'] }}</h2>
+      <h2 class="archive__product-header">{{ $data['title'] }}</h2>
     @endisset
 
-    {{-- Hero section (Featured Recipe) --}}
+    {{-- Hero section --}}
     @isset($data['hero'])
       @include('modules.hero', ['data' => $data['hero']])
     @endisset
 
-    {{-- Recipe grid section (display all recipes except featured recipe) --}}
+    {{-- Product grid section (displays all products) --}}
     @isset($data['grid'])
       @include('modules.grid', ['data' => $data['grid']])
     @endisset

@@ -131,7 +131,6 @@ $_banner-height--desktop: 100px;
     }
 
     .menu-item {
-      position: relative;
       font-size: em($font-size-base * 1.2);
       padding: em(20, $font-size-base * 1.2);
       text-transform: uppercase;
@@ -142,61 +141,9 @@ $_banner-height--desktop: 100px;
         padding: em(25, 22);
       }
 
-      &.menu-products {
-        .sub-menu {
-          display: none;
-          font-size: $font-size-base;
-
-          &--active {
-            display: block;
-            position: relative;
-            border: em(1) solid c(red, dark);
-            width: em(250);
-            margin: em(10) auto em(-15) auto;
-
-            @include min-width($_mobile-640px-breakpoint) {
-              width: em(300);
-            }
-
-            &::before,
-            &::after {
-              content: '';
-              display: block;
-              @include position(absolute, (bottom: 100%));
-              width: 0;
-              height: 0;
-            }
-
-            &::before {
-              left: 44%;
-              border: 11px solid transparent;
-              border-bottom-color: c(red, dark);
-            }
-
-            &::after {
-              left: 45%;
-              border: 10px solid transparent;
-              border-bottom-color: c(red, dark);
-            }
-          }
-
-          li {
-            padding: em(15, $font-size-base * 1.2) 0;
-            color: white;
-
-            &:first-child {
-              padding-bottom: 0;
-            }
-
-            &:last-child {
-              padding-top: 0;
-            }
-
-            &.active {
-              text-decoration: underline;
-            }
-          }
-        }
+      &.active {
+        color: c(white);
+        text-decoration: underline;
       }
     }
   }
@@ -264,44 +211,6 @@ $_banner-height--desktop: 100px;
       &.active {
         text-decoration: underline;
         color: c(red);
-      }
-
-      &.menu-products {
-        .sub-menu {
-          @include position(absolute, (top: 20px));
-          display: none;
-          opacity: 0;
-          width: em(225);
-          background-color: c(red);
-
-          .menu-item {
-            margin-left: 0;
-            padding: em(12) em(10);
-            color: c(white);
-            border-bottom: em(1) solid c(white);
-
-            &:last-child {
-              border-bottom: none;
-            }
-
-            a {
-              &:hover {
-                text-decoration: underline;
-                color: c(white);
-              }
-            }
-          }
-        }
-
-        &:hover {
-          @include transition((properties: (color)));
-          color: c(red);
-
-          .sub-menu {
-            display: block;
-            opacity: 1;
-          }
-        }
       }
     }
   }

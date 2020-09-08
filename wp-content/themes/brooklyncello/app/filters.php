@@ -139,6 +139,7 @@ add_action('pre_get_posts', function( $query ) {
         $query->set('order', 'ASC');
         $query->set('orderby', 'menu_order');
         $query->set('posts_per_page', '-1');
+        $query->set('post_status', 'publish');
     }
 });
 
@@ -154,6 +155,7 @@ add_filter('use_block_editor_for_post_type', function ($can_edit, $post_type) {
 
     $excluded_templates = [
         'views/archive-recipe.blade.php',
+        'views/archive-product.blade.php',
     ];
 
     if (empty($post_id)) {

@@ -25,27 +25,27 @@
     </section>
 
     {{-- Recipe details section --}}
-    <section class="recipe-details">
-      <div class="recipe-details__wrap">
+    <section class="single-recipe__details">
+      <div class="single-recipe__details-wrap">
         @if (!empty($ingredients = $data['ingredients']))
-          <div class="recipe-details__ingredients">
-            <h3 class="recipe-details__header">{{ __('Ingredients', 'brooklyncello') }}</h3>
+          <div class="single-recipe__details-ingredients">
+            <h3 class="single-recipe__details-header">{{ __('Ingredients', 'brooklyncello') }}</h3>
 
             <ul>
               @foreach ($ingredients as $ingredient)
-                <li class="recipe-details__ingredient">{{ $ingredient }}</li>
+                <li class="single-recipe__details-ingredient">{{ $ingredient }}</li>
               @endforeach
             </ul>
           </div>
         @endif
 
         @if (!empty($methods = $data['methods']))
-          <div class="recipe-details__methods">
-            <h3 class="recipe-details__header recipe-details__header--methods">{{ __('Method', 'brooklyncello') }}</h3>
+          <div class="single-recipe__details-methods">
+            <h3 class="single-recipe__details-header single-recipe__details-header--methods">{{ __('Method', 'brooklyncello') }}</h3>
 
-            <ol class="recipe-details__methods-list">
+            <ol class="single-recipe__details-methods-list">
               @foreach ($methods as $method)
-                <li class="recipe-details__method">{{ $method }}</li>
+                <li class="single-recipe__details-method">{{ $method }}</li>
               @endforeach
             </ol>
           </div>
