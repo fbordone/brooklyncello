@@ -3,19 +3,15 @@
 --}}
 
 @unless (!is_array($data) || empty($data))
-  @if ( !empty($data['fields']['cta__editor']) )
-    <section class="{{ $data['classes'] }}">
-      {!! $data['fields']['cta__editor'] !!}
+  <section class="{{ $data['classes'] }}">
+    @unless (empty($content = $data['fields']['cta__editor']))
+      {!! $content !!}
+    @endunless
 
-      @if ( !empty($data['fields']['cta__button']) )
-        <a class="cta__btn" href="{{ $data['fields']['cta__button']['url'] }}" target="{{ $data['fields']['cta__button']['target'] }}">
-          {{ $data['fields']['cta__button']['title'] }}
-        </a>
-      @endif
-
-      @if ( $data['extras']['variant'] === 'horizontal-line' )
-        <hr class="cta__hr">
-      @endif
-    </section>
-  @endif
+    @unless (empty($button = $data['fields']['cta__button']))
+      <a class="cta__btn" href="{{ $button['url'] }}" target="{{ $button['target'] }}">
+        {{ $button['title'] }}
+      </a>
+    @endunless
+  </section>
 @endunless

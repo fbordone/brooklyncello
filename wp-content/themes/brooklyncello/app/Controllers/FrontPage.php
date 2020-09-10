@@ -11,15 +11,37 @@ class FrontPage extends Controller {
     use ModuleLoader;
 
     /*
-     * 'Hero' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/hero.blade.php`
+     * Initialize method to obtain ACF data
      */
-    public function hero() {
+    public function __before() {
+        // get ACF data
+        $this->data();
+    }
+
+    /*
+     * Obtain ACF data for recipes page
+     */
+    public function data() {
+        $acf_data = [
+            'hero' => $this->get_hero(),
+            'content_one' => $this->get_content_one(),
+            'banner' => $this->get_banner(),
+            'grid_two' => $this->get_grid_two(),
+            'grid_one' => $this->get_grid_one(),
+            'content_two' => $this->get_content_two(),
+            'content_three' => $this->get_content_three(),
+        ];
+
+        return $acf_data;
+    }
+
+    /*
+     * Hero helper function
+     */
+    private function get_hero() {
         return $this->get_module([
             'module' => 'hero',
-            'prefix' => 'home_hero',
+            'prefix' => 'home__hero',
             'classes' => [
                 'hero hero--home'
             ],
@@ -31,15 +53,12 @@ class FrontPage extends Controller {
     }
 
     /*
-     * 'CTA' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/cta.blade.php`
+     * Content helper function
      */
-    public function cta() {
+    private function get_content_one() {
         return $this->get_module([
             'module' => 'cta',
-            'prefix' => 'home_cta',
+            'prefix' => 'home__cta_one',
             'classes' => [
                 'cta cta--home'
             ],
@@ -50,17 +69,14 @@ class FrontPage extends Controller {
     }
 
     /*
-     * 'Banner' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/hero.blade.php`
+     * Banner helper function
      */
-    public function banner() {
+    private function get_banner() {
         return $this->get_module([
             'module' => 'hero',
-            'prefix' => 'home_banner',
+            'prefix' => 'home__banner',
             'classes' => [
-                'hero banner--home'
+                'hero hero--banner-home'
             ],
             'extras' => [
                 'variant' => '',
@@ -70,52 +86,91 @@ class FrontPage extends Controller {
     }
 
     /*
-     * 'Featured' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/featured.blade.php`
+     * Grid helper function
      */
-    public function featured() {
-        return $this->get_module([
-            'module' => 'featured',
-            'prefix' => 'home_featured',
+    private function get_grid_two() {
+        $module_data = $this->get_module([
+            'module' => 'grid',
+            'prefix' => 'home__grid_two',
             'classes' => [
-                'featured featured--home'
+                'grid grid--home grid--small-title'
+            ],
+        ]);
+
+        $grid_posts = $module_data['fields']['grid__posts'];
+        $grid_data = [];
+
+        if ($grid_posts) {
+            foreach($grid_posts as $post_id) {
+                $grid_data[] = [
+                    'link' => get_permalink($post_id),
+                    'image_id' => get_post_thumbnail_id($post_id),
+                    'title' => get_the_title($post_id),
+                    'excerpt' => get_the_excerpt($post_id),
+                ];
+            }
+
+            array_splice($module_data['fields']['grid__posts'], 0);
+            $module_data['fields']['grid__posts'] = $grid_data;
+        }
+
+        return $module_data;
+    }
+
+    /*
+     * Grid helper function
+     */
+    private function get_grid_one() {
+        $module_data = $this->get_module([
+            'module' => 'grid',
+            'prefix' => 'home__grid_one',
+            'classes' => [
+                'grid grid--home'
+            ],
+        ]);
+
+        $grid_posts = $module_data['fields']['grid__posts'];
+        $grid_data = [];
+
+        if ($grid_posts) {
+            foreach($grid_posts as $post_id) {
+                $grid_data[] = [
+                    'link' => get_permalink($post_id),
+                    'image_id' => get_post_thumbnail_id($post_id),
+                    'title' => get_the_title($post_id),
+                    'excerpt' => get_the_excerpt($post_id),
+                ];
+            }
+
+            array_splice($module_data['fields']['grid__posts'], 0);
+            $module_data['fields']['grid__posts'] = $grid_data;
+        }
+
+        return $module_data;
+    }
+
+    /*
+     * Content helper function
+     */
+    private function get_content_two() {
+        return $this->get_module([
+            'module' => 'cta',
+            'prefix' => 'home__cta_two',
+            'classes' => [
+                'cta cta--home cta--borders'
             ],
         ]);
     }
 
     /*
-     * 'CTA' section 3
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/cta.blade.php`
+     * Content helper function
      */
-    public function cta_three() {
+    private function get_content_three() {
         return $this->get_module([
             'module' => 'cta',
-            'prefix' => 'home_cta_three',
+            'prefix' => 'home__cta_three',
             'classes' => [
-                'cta cta--home-three'
-            ],
-            'extras' => [
-                'variant' => 'horizontal-line',
-            ],
-        ]);
-    }
-
-        /*
-     * 'CTA' section 4
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/cta.blade.php`
-     */
-    public function cta_four() {
-        return $this->get_module([
-            'module' => 'cta',
-            'prefix' => 'home_cta_four',
-            'classes' => [
-                'cta cta--home-four'
+                'cta cta--home'
             ],
             'extras' => [
                 'variant' => '',

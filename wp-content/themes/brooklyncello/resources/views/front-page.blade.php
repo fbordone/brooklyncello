@@ -7,33 +7,38 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     {{-- 'Hero' section --}}
-    @isset($hero)
-      @include('modules.hero', ['data' => $hero])
+    @isset($data['hero'])
+      @include('modules.hero', ['data' => $data['hero']])
     @endisset
 
-    {{-- 'CTA' section --}}
-    @isset($cta)
-      @include('modules.cta', ['data' => $cta])
+    {{-- 'Content' section --}}
+    @isset($data['content_one'])
+      @include('modules.cta', ['data' => $data['content_one']])
     @endisset
 
     {{-- 'Banner' section --}}
-    @isset($banner)
-      @include('modules.hero', ['data' => $banner])
+    @isset($data['banner'])
+      @include('modules.hero', ['data' => $data['banner']])
     @endisset
 
-    {{-- 'Featured' section --}}
-    @isset($featured)
-      @include('modules.featured', ['data' => $featured])
+    {{-- 'Grid' section --}}
+    @isset($data['grid_two'])
+      @include('modules.grid', ['data' => $data['grid_two']])
     @endisset
 
-    {{-- 'CTA' section 3 --}}
-    @isset($cta_three)
-      @include('modules.cta', ['data' => $cta_three])
+    {{-- 'Grid' section --}}
+    @isset($data['grid_one'])
+      @include('modules.grid', ['data' => $data['grid_one']])
     @endisset
 
-    {{-- 'CTA' section 4 --}}
-    @isset($cta_four)
-      @include('modules.cta', ['data' => $cta_four])
+    {{-- 'Content' section --}}
+    @isset($data['content_two'])
+      @include('modules.cta', ['data' => $data['content_two']])
+    @endisset
+
+    {{-- 'Content' section --}}
+    @isset($data['content_three'])
+      @include('modules.cta', ['data' => $data['content_three']])
     @endisset
   @endwhile
 @endsection

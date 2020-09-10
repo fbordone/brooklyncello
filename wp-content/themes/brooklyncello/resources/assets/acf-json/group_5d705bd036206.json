@@ -1,6 +1,6 @@
 {
     "key": "group_5d705bd036206",
-    "title": "Home Page Input Fields",
+    "title": "Page - Home",
     "fields": [
         {
             "key": "field_5d708ab1e845c",
@@ -15,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5d71d39feb458",
             "label": "Hero",
-            "name": "home_hero",
+            "name": "home__hero",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -40,8 +40,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5de15e511ecdd",
-            "label": "Call to Action Section",
+            "key": "field_5f571ca0c4076",
+            "label": "Content Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -52,13 +52,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_5de15e611ecde",
-            "label": "Call to Action",
-            "name": "home_cta",
+            "key": "field_5f571cb9c4077",
+            "label": "Content",
+            "name": "home__cta_one",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -89,13 +89,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5de302e158815",
             "label": "Banner",
-            "name": "home_banner",
+            "name": "home__banner",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -114,8 +114,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5de1677cecb32",
-            "label": "Featured Section",
+            "key": "field_5f584668e40da",
+            "label": "Grid Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -126,13 +126,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_5de1678decb33",
-            "label": "Featured",
-            "name": "home_featured",
+            "key": "field_5f584678e40db",
+            "label": "Grid",
+            "name": "home__grid_two",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -143,7 +143,7 @@
                 "id": ""
             },
             "clone": [
-                "group_5de166234d4b7"
+                "group_5f51cc744a807"
             ],
             "display": "seamless",
             "layout": "block",
@@ -151,8 +151,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5de3068949cfc",
-            "label": "Call to Action Section 3",
+            "key": "field_5de1677cecb32",
+            "label": "Grid Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -163,13 +163,50 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f5835422ff1f",
+            "label": "Grid",
+            "name": "home__grid_one",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f51cc744a807"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_5de3068949cfc",
+            "label": "Content Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5de3065649cfb",
-            "label": "Call to Action 3",
-            "name": "home_cta_three",
+            "label": "Content",
+            "name": "home__cta_two",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -189,7 +226,7 @@
         },
         {
             "key": "field_5de37bb0190dd",
-            "label": "Call to Action Section 4",
+            "label": "Content Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -200,13 +237,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5de37bbf190de",
-            "label": "Call to Action 4",
-            "name": "home_cta_four",
+            "label": "Content",
+            "name": "home__cta_three",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -240,7 +277,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1598037617
+    "modified": 1599698046
 }

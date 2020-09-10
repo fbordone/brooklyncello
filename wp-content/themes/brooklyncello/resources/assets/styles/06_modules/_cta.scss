@@ -4,8 +4,6 @@
 
 ================================================================================================= */
 
-/************* Internal variables ************/
-
 /************* General styles ************/
 .cta {
   @include container((width: 1120px));
@@ -13,81 +11,49 @@
   padding-bottom: em(50);
   text-align: center;
 
-  @include min-width($_mobile-480px-breakpoint) {
-    padding-top: em(75);
-    padding-bottom: em(75);
+  &--borders {
+    box-shadow: 0 15px 40px -10px c(red);
+    margin-top: em(40);
+    margin-bottom: em(30);
   }
 
-  &--home-three {
-    padding-top: em(10);
-    padding-bottom: em(0);
+  p {
+    font-size: $font-size-base * 1.2;
+    line-height: em(30, $font-size-base * 1.2);
+    margin-bottom: em(20, $font-size-base * 1.2);
 
-    @include min-width($_mobile-480px-breakpoint) {
-      padding-top: em(45);
-      padding-bottom: em(10);
-    }
-  }
-
-  &--home-four {
-    padding-top: em(30);
-    padding-bottom: em(50);
-
-    @include min-width($_mobile-480px-breakpoint) {
-      padding-top: em(45);
-      padding-bottom: em(75);
-    }
-  }
-
-  > p {
-    line-height: em(35, $font-size-base);
-    margin-bottom: em(15, $font-size-base);
-
-    @include min-width($_mobile-480px-breakpoint) {
-      font-size: em(24);
-      line-height: em(35, 24);
-      margin-bottom: em(15, 24);
-    }
-
-    @include min-width($_tablet-960px-breakpoint) {
-      font-size: em(26);
-      line-height: em(40, 26);
-      margin-bottom: em(15, 26);
+    @include min-width($_tablet-800px-breakpoint) {
+      font-size: $font-size-base--desktop;
+      line-height: em(40, $font-size-base--desktop);
+      margin-bottom: em(20, $font-size-base--desktop);
     }
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    > a {
+  a {
+    @include transition((properties: (color)));
+    color: c(red, dark);
+
+    &:hover {
       @include transition((properties: (color)));
-      color: c(red, dark);
-
-      &:hover,
-      &:active {
-        @include transition((properties: (color)));
-        color: c(red);
-      }
+      color: c(red);
     }
   }
 }
 
 .cta__btn {
   @include button {
-    background-color: c(red, dark);
-    border: em(1) solid c(red, dark);
-    color: c(white) !important;
-    transition-duration: 300ms;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-  }
-
-  &:hover,
-  &:active {
     @include transition((properties: (background-color)));
-    background-color: c(red);
-  }
-}
+    background-color: c(red, dark);
+    color: white !important;
 
-.cta__hr {
-  margin-top: em(55);
+    &:hover,
+    &:focus {
+      @include transition((properties: (background-color)));
+      background-color: c(red);
+    }
+  }
 }
