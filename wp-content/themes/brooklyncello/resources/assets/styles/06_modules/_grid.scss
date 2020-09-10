@@ -1,0 +1,83 @@
+/* ==============================================================================================
+
+// GRID MODULE STYLES
+
+================================================================================================= */
+
+/************* General styles ************/
+.grid {
+  @include container((width: 1280px));
+  padding-top: em(70);
+  padding-bottom: em(40);
+}
+
+.grid__header {
+  padding-bottom: em(30, $font-size-h2);
+  letter-spacing: em(0.5, $font-size-h2);
+  line-height: em(55, $font-size-h2);
+  text-align: center;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-h1);
+    padding-bottom: em(40, $font-size-h1);
+    letter-spacing: em(0.5, $font-size-h1);
+    line-height: em(75, $font-size-h1);
+  }
+}
+
+.grid__wrap {
+  @include flex-container((wrap: wrap, justify: flex-start, align: flex-start));
+}
+
+.grid__card {
+  width: 100%;
+  margin-bottom: em(50);
+
+  @include min-width($_mobile-640px-breakpoint) {
+    width: 50%;
+    padding-left: em(10);
+    padding-right: em(10);
+  }
+
+  @include min-width($_tablet-960px-breakpoint) {
+    width: 33.33%;
+  }
+}
+
+.grid__card-content {
+  width: 100%;
+  text-align: center;
+
+  @include min-width($_mobile-640px-breakpoint) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.grid__card-img {
+  @include transition((properties: (transform)));
+
+  &:hover,
+  &:focus {
+    @include transition((properties: (transform)));
+    transform: scale(1.02);
+  }
+}
+
+.grid__card-title {
+  @include transition((properties: (color)));
+  margin-top: em(10, $font-size-h3);
+  letter-spacing: em(0.75, $font-size-h3);
+  line-height: em(55, $font-size-h3);
+
+  &:hover,
+  &:focus {
+    @include transition((properties: (color)));
+    color: c(red);
+  }
+}
+
+.grid__card-excerpt {
+  max-width: em(300, $font-size-base);
+  margin: 0 auto;
+}

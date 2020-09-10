@@ -109,7 +109,7 @@
   }
 }
 
-.recipe-details {
+.single-recipe__details {
   @include container((width: 960px));
   padding-top: em(7);
   padding-bottom: em(25);
@@ -119,13 +119,13 @@
   }
 }
 
-.recipe-details__wrap {
+.single-recipe__details-wrap {
   @include min-width($_tablet-960px-breakpoint) {
     @include flex-container((direction: row, align: flex-start, justify: center));
   }
 }
 
-.recipe-details__ingredients {
+.single-recipe__details-ingredients {
   margin-bottom: em(30);
 
   @include min-width($_tablet-960px-breakpoint) {
@@ -134,7 +134,7 @@
   }
 }
 
-.recipe-details__header {
+.single-recipe__details-header {
   margin-bottom: em(10, $font-size-h3);
   letter-spacing: em(1, $font-size-h3);
   color: c(red, dark);
@@ -155,17 +155,7 @@
   }
 }
 
-.recipe-details__methods {
-  @include min-width($_tablet-960px-breakpoint) {
-    width: 50%;
-  }
-}
-
-.recipe-details__methods-list {
-  counter-reset: item;
-}
-
-.recipe-details__ingredient {
+.single-recipe__details-ingredient {
   font-size: em($font-size-base);
   font-weight: bold;
 
@@ -174,7 +164,17 @@
   }
 }
 
-.recipe-details__method {
+.single-recipe__details-methods {
+  @include min-width($_tablet-960px-breakpoint) {
+    width: 50%;
+  }
+}
+
+.single-recipe__details-methods-list {
+  counter-reset: item;
+}
+
+.single-recipe__details-method {
   font-size: em($font-size-base);
   font-weight: bold;
   line-height: em(25, $font-size-base);

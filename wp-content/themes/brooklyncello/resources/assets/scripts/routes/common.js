@@ -65,19 +65,6 @@ export default {
     if (navBtn) {
       navBtn.addEventListener('click', handleToggleMenu.bind(navBtn, bannerWrap, icon, mobileNav), {passive: true});
     }
-
-    // 'Product' submenu in primary (header) navigation menu
-    const productMenuItem = document.querySelector('.banner__nav-header-mobile .menu-products > a');
-    const productSubMenu = document.querySelector('.banner__nav-header-mobile .menu-products > ul');
-    if (productMenuItem) {
-      productMenuItem.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        if (productSubMenu) {
-          productSubMenu.classList.toggle('sub-menu--active');
-        }
-      });
-    }
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
