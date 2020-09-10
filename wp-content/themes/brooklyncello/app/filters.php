@@ -156,6 +156,7 @@ add_filter('use_block_editor_for_post_type', function ($can_edit, $post_type) {
     $excluded_templates = [
         'views/archive-recipe.blade.php',
         'views/archive-product.blade.php',
+        'views/front-page.blade.php',
     ];
 
     if (empty($post_id)) {

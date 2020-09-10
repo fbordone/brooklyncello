@@ -25,7 +25,7 @@
             "key": "field_5f51cd53c12d6",
             "label": "Posts",
             "name": "grid__posts",
-            "type": "post_object",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,14 +35,17 @@
                 "id": ""
             },
             "post_type": [
-                "product",
-                "recipe"
+                "recipe",
+                "product"
             ],
             "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -60,7 +63,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 0,
+    "active": false,
     "description": "",
-    "modified": 1599462188
+    "modified": 1599616918
 }
