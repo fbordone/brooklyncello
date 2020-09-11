@@ -26,7 +26,7 @@ class SingleProduct extends Controller {
     }
 
     /*
-     * Obtain ACF data for single recipe
+     * Obtain ACF data for single product
      */
     public function data() {
         $acf_data = [
@@ -73,7 +73,7 @@ class SingleProduct extends Controller {
      * Description helper function
      */
     private function get_description() {
-        $description = get_field('product__desc', $this->recipe_id);
+        $description = get_field('product__desc', $this->product_id);
 
         if (!$description) {
             return;
