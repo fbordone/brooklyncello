@@ -54,7 +54,7 @@ class SingleProduct extends Controller {
                 'hero__desktop_img' => get_field('product__desktop_img', $this->product_id),
             ],
             'extras' => [
-                'variant' => '',
+                'variant' => 'recipes',
                 'supplemental-data' => $hero_data,
             ],
         ];
