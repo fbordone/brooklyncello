@@ -7,20 +7,24 @@
       @include('modules.hero', ['data' => $data['hero']])
     @endisset
 
-    {{-- Bottle Image section --}}
-    <section class="single-product__img">
-      <figure class="single-product__img-wrap">
-        {!! $data['thumbnail'] !!}
-      </figure>
-    </section>
+    {{-- Content section --}}
+    <section class="single-product__content">
+      <div class="single-product__content-wrap">
+        <figure class="single-product__img-wrap">
+          {!! $data['thumbnail'] !!}
+        </figure>
 
-    {{-- Description section --}}
-    <section class="single-product__desc">
-      <div class="single-product__desc-wrap">
-        @if (!empty($description = $data['desc']))
-          {!! $description !!}
-        @endif
+        <div class="single-product__desc-wrap">
+          @if (!empty($description = $data['desc']))
+            {!! $description !!}
+          @endif
+        </div>
       </div>
     </section>
+
+    {{-- Grid section --}}
+    @isset($data['grid'])
+      @include('modules.grid', ['data' => $data['grid']])
+    @endisset
   @endwhile
 @endsection
