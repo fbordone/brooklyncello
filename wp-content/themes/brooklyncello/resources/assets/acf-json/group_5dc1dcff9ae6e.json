@@ -1,6 +1,6 @@
 {
     "key": "group_5dc1dcff9ae6e",
-    "title": "About Page Input Fields",
+    "title": "Page - About",
     "fields": [
         {
             "key": "field_5dc1dcff9ddab",
@@ -15,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5dc1dcff9ddd0",
             "label": "Hero",
-            "name": "about_hero",
+            "name": "about__hero",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -41,7 +41,7 @@
         },
         {
             "key": "field_5dc376353bd9a",
-            "label": "Content Section One",
+            "label": "Content Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -52,13 +52,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5dc376e73bd9d",
             "label": "Content",
-            "name": "about_content_one",
+            "name": "about__content_one",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -78,7 +78,7 @@
         },
         {
             "key": "field_5dc376593bd9b",
-            "label": "Content Section Two",
+            "label": "Content Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -89,13 +89,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5dc3773f3bd9f",
             "label": "Content",
-            "name": "about_content_two",
+            "name": "about__content_two",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -115,7 +115,7 @@
         },
         {
             "key": "field_5dc3765e3bd9c",
-            "label": "Content Section Three",
+            "label": "Content Section",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -126,13 +126,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
             "key": "field_5dc3776e3bda0",
             "label": "Content",
-            "name": "about_content_three",
+            "name": "about__content_three",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -166,7 +166,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1573091210
+    "modified": 1599712417
 }

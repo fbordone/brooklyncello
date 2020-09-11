@@ -11,15 +11,34 @@ class PageAbout extends Controller {
     use ModuleLoader;
 
     /*
-     * 'Hero' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @see `../../resources/views/modules/hero.blade.php`
+     * Initialize method to obtain ACF data
      */
-    public function hero() {
+    public function __before() {
+        // get ACF data
+        $this->data();
+    }
+
+    /*
+     * Obtain ACF data for recipes page
+     */
+    public function data() {
+        $acf_data = [
+            'hero' => $this->get_hero(),
+            'content_one' => $this->get_content_one(),
+            'content_two' => $this->get_content_two(),
+            'content_three' => $this->get_content_three(),
+        ];
+
+        return $acf_data;
+    }
+
+    /*
+     * Hero helper function
+     */
+    private function get_hero() {
         return $this->get_module([
             'module' => 'hero',
-            'prefix' => 'about_hero',
+            'prefix' => 'about__hero',
             'classes' => [
                 'hero hero--about'
             ],
@@ -31,15 +50,12 @@ class PageAbout extends Controller {
     }
 
     /*
-     * 'Content One' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @uses `../../resources/views/modules/content.blade.php`
+     * Content helper function
      */
-    public function about_content_one() {
+    private function get_content_one() {
         $content_module = $this->get_module([
             'module' => 'content',
-            'prefix' => 'about_content_one',
+            'prefix' => 'about__content_one',
             'classes' => [
                 'content-block content-block--about'
             ],
@@ -53,15 +69,12 @@ class PageAbout extends Controller {
     }
 
     /*
-     * 'Content Two' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @uses `../../resources/views/modules/content.blade.php`
+     * Content helper function
      */
-    public function about_content_two() {
+    private function get_content_two() {
         $content_module = $this->get_module([
             'module' => 'content',
-            'prefix' => 'about_content_two',
+            'prefix' => 'about__content_two',
             'classes' => [
                 'content-block content-block--about'
             ],
@@ -75,15 +88,12 @@ class PageAbout extends Controller {
     }
 
     /*
-     * 'Content Three' section
-     *
-     * @uses `App\ModuleLoader->get_module()`
-     * @uses `../../resources/views/modules/content.blade.php`
+     * Content helper function
      */
-    public function about_content_three() {
+    private function get_content_three() {
         $content_module = $this->get_module([
             'module' => 'content',
-            'prefix' => 'about_content_three',
+            'prefix' => 'about__content_three',
             'classes' => [
                 'content-block content-block--about'
             ],

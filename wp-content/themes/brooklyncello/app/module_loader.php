@@ -25,8 +25,8 @@ trait ModuleLoader {
         'cta' => [
             'fields' => ['cta__editor', 'cta__button'],
         ],
-        'featured' => [
-            'fields' => ['featured__title', 'featured__recipes'],
+        'grid' => [
+            'fields' => ['grid__title', 'grid__posts'],
         ],
         'hero' => [
             'fields' => ['hero__copy', 'hero__cta', 'hero__mobile_img', 'hero__desktop_img'],

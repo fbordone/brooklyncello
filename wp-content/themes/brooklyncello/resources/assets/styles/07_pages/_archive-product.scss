@@ -1,0 +1,20 @@
+/* ==============================================================================================
+
+// ARCHIVE PRODUCT PAGE STYLES
+
+================================================================================================= */
+
+/************* General styles ************/
+.archive__product-header {
+  padding: em(30, $font-size-h2) em(25, $font-size-h2) em(25, $font-size-h2);
+  letter-spacing: em(0.5, $font-size-h2);
+  line-height: em(55, $font-size-h2);
+  text-align: center;
+
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-h1);
+    padding: em(45, $font-size-h1) em(25, $font-size-h1) em(35, $font-size-h1);
+    letter-spacing: em(0.5, $font-size-h1);
+    line-height: em(75, $font-size-h1);
+  }
+}

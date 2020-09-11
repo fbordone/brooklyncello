@@ -26,7 +26,7 @@ class SingleProduct extends Controller {
     }
 
     /*
-     * Obtain ACF data for single recipe
+     * Obtain ACF data for single product
      */
     public function data() {
         $acf_data = [
@@ -34,6 +34,7 @@ class SingleProduct extends Controller {
             'hero' => $this->get_hero(),
             'thumbnail' => $this->get_thumbnail(),
             'desc' => $this->get_description(),
+            'grid' => $this->get_grid(),
         ];
 
         return $acf_data;
@@ -73,12 +74,44 @@ class SingleProduct extends Controller {
      * Description helper function
      */
     private function get_description() {
-        $description = get_field('product__desc', $this->recipe_id);
+        $description = get_field('product__desc', $this->product_id);
 
         if (!$description) {
             return;
         }
 
         return $description;
+    }
+
+    /*
+     * Grid helper function
+     */
+    private function get_grid() {
+        $module_data = $this->get_module([
+            'module' => 'grid',
+            'prefix' => 'product__grid',
+            'classes' => [
+                'grid grid--product'
+            ],
+        ]);
+
+        $grid_posts = $module_data['fields']['grid__posts'];
+        $grid_data = [];
+
+        if ($grid_posts) {
+            foreach($grid_posts as $post_id) {
+                $grid_data[] = [
+                    'link' => get_permalink($post_id),
+                    'image_id' => get_post_thumbnail_id($post_id),
+                    'title' => get_the_title($post_id),
+                    'excerpt' => get_the_excerpt($post_id),
+                ];
+            }
+
+            array_splice($module_data['fields']['grid__posts'], 0);
+            $module_data['fields']['grid__posts'] = $grid_data;
+        }
+
+        return $module_data;
     }
 }

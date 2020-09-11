@@ -17,7 +17,7 @@
 }
 
 .about__preface {
-  margin-bottom: em(38, $font-size-base);
+  margin-bottom: em(25, $font-size-base);
   line-height: em(30, $font-size-base);
   font-weight: bold;
   text-align: center;
@@ -34,15 +34,41 @@
     padding-right: em(60, $font-size-base);
   }
 
+  strong {
+    color: c(gray);
+  }
+
+  p {
+    @include min-width($_tablet-960px-breakpoint) {
+      font-size: em($font-size-base--desktop);
+      line-height: em(35, $font-size-base--desktop);
+    }
+
+    a {
+      @include transition((properties: (color)));
+      color: c(red);
+
+      &:hover,
+      &:active {
+        @include transition((properties: (color)));
+        color: c(black);
+      }
+    }
+  }
+
   p + p {
     margin-top: em(20, $font-size-base);
+
+    @include min-width($_tablet-960px-breakpoint) {
+      margin-top: em(20, $font-size-base--desktop);
+    }
   }
 
   p:last-child {
     margin-bottom: em(30, $font-size-base);
 
     @include min-width($_tablet-960px-breakpoint) {
-      margin-bottom: em(40, $font-size-base);
+      margin-bottom: em(40, $font-size-base--desktop);
     }
   }
 }

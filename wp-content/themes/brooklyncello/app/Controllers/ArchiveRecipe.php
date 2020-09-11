@@ -5,11 +5,6 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 
 class ArchiveRecipe extends Controller {
-    /**
-     * @see `../module_loader.php`
-     */
-    use ModuleLoader;
-
     // ID of the archive page
     protected $archive_page_id;
 
@@ -21,7 +16,7 @@ class ArchiveRecipe extends Controller {
      */
     public function __before() {
         // get the archive recipe page ID
-        $this->archive_page_id = get_field('recipes__archive-page', 'option');
+        $this->archive_page_id = get_field('recipes__archive_page', 'option');
 
         // get the featured recipe ID
         $this->featured_recipe_id = get_field('recipes__featured', $this->archive_page_id);
@@ -37,8 +32,7 @@ class ArchiveRecipe extends Controller {
         $acf_data = [
             'title' => $this->get_title(),
             'hero' => $this->get_hero(),
-            'grid_title' => $this->get_grid_title(),
-            'recipes' => $this->get_grid_data(),
+            'grid' => $this->get_grid(),
         ];
 
         return $acf_data;
@@ -82,32 +76,39 @@ class ArchiveRecipe extends Controller {
     }
 
     /*
-     * Grid section title helper function
+     * Grid helper function
      */
-    private function get_grid_title() {
-        $grid_title = get_field('recipes__grid_title', $this->archive_page_id);
+    private function get_grid() {
+        $_grid = [
+            'classes' => 'grid grid--archive-recipe',
+            'fields' => [
+                'grid__title' => get_field('recipes__grid_title', $this->archive_page_id),
+                'grid__posts' => $this->get_grid_data(),
+            ],
+        ];
 
-        if (!$grid_title) {
-            return;
-        }
-
-        return $grid_title;
+        return $_grid;
     }
 
     /*
      * Grid data helper function
      */
     private function get_grid_data() {
-        while (have_posts()) {
-            the_post();
+        $data = [];
 
-            // exclude the featured recipe
-            if (get_the_ID() !== $this->featured_recipe_id) {
-                $data[] = [
-                    'link' => get_permalink(),
-                    'image' => get_post_thumbnail_id(),
-                    'title' => get_the_title(),
-                ];
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+
+                // exclude the featured recipe
+                if ($this->featured_recipe_id !== get_the_ID()) {
+                    $data[] = [
+                        'link' => get_permalink(),
+                        'image_id' => get_post_thumbnail_id(),
+                        'title' => get_the_title(),
+                        'excerpt' => get_the_excerpt(),
+                    ];
+                }
             }
         }
 
