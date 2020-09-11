@@ -7,8 +7,8 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     {{-- 'Hero' section --}}
-    @isset($hero)
-      @include('modules.hero', ['data' => $hero])
+    @isset($data['hero'])
+      @include('modules.hero', ['data' => $data['hero']])
     @endisset
 
     <section class="about">
@@ -17,18 +17,18 @@
 
     <div class="about__content">
       {{-- 'Content One' section --}}
-      @isset($about_content_one)
-        @include('modules.content', ['data' => $about_content_one])
+      @isset($data['content_one'])
+        @include('modules.content', ['data' => $data['content_one']])
       @endisset
 
       {{-- 'Content Two' section --}}
-      @isset($about_content_two)
-        @include('modules.content', ['data' => $about_content_two])
+      @isset($data['content_two'])
+        @include('modules.content', ['data' => $data['content_two']])
       @endisset
 
       {{-- 'Content Three' section --}}
-      @isset($about_content_three)
-        @include('modules.content', ['data' => $about_content_three])
+      @isset($data['content_three'])
+        @include('modules.content', ['data' => $data['content_three']])
       @endisset
     </div>
   @endwhile

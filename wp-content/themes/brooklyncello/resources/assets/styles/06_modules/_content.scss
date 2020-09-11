@@ -20,6 +20,12 @@
 
 .content-block__copy-wrap {
   text-align: center;
+
+  p {
+    @include min-width($_laptop-1280px-breakpoint) {
+      font-size: em($font-size-base * 1.2);
+    }
+  }
 }
 
 .content-block {
@@ -27,7 +33,7 @@
   padding-bottom: em(50);
 
   @include min-width($_laptop-1280px-breakpoint) {
-    padding-bottom: em(10);
+    padding-bottom: em(90);
   }
 
   > .content-block__img-wrap {
