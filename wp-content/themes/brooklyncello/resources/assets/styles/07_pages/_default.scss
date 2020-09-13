@@ -93,3 +93,20 @@
     }
   }
 }
+
+.wpforms__btn {
+  @include transition((properties: (background-color)));
+  background-color: c(red, dark) !important;
+  color: c(white) !important;
+  border: 0 !important;
+  text-transform: uppercase !important;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif !important;
+  font-size: $font-size-base !important;
+  letter-spacing: em(2, $font-size-base) !important;
+
+  &:hover,
+  &:focus {
+    @include transition((properties: (background-color)));
+    background-color: c(red) !important;
+  }
+}
