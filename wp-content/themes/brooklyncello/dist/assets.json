@@ -1,9 +1,9 @@
 {
   "fonts/built-titling.woff": "fonts/built-titling_4ba8bb42.woff",
   "fonts/built-titling.woff2": "fonts/built-titling_4ba8bb42.woff2",
-  "spritemap.svg": "spritemap_81ca32475a48b83cf801.svg",
-  "styles/fonts.css": "styles/fonts_81ca3247.css",
-  "scripts/fonts.js": "scripts/fonts_81ca3247.js",
-  "styles/main.css": "styles/main_81ca3247.css",
-  "scripts/main.js": "scripts/main_81ca3247.js"
+  "spritemap.svg": "spritemap_fdd531b5ab6ed4ece1bb.svg",
+  "styles/fonts.css": "styles/fonts_fdd531b5.css",
+  "scripts/fonts.js": "scripts/fonts_fdd531b5.js",
+  "styles/main.css": "styles/main_fdd531b5.css",
+  "scripts/main.js": "scripts/main_fdd531b5.js"
 }
