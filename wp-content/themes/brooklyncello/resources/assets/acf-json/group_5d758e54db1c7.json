@@ -212,102 +212,6 @@
             "new_lines": "br"
         },
         {
-            "key": "field_5e686ec0f449a",
-            "label": "Analytics",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5e686f05350e2",
-            "label": "Head Snippets",
-            "name": "analytics_head_snippets",
-            "type": "repeater",
-            "instructions": "Add analytic-related snippets here. <strong>These snippets are added to the opening `&lt;head&gt;` tag and fire off on every page of the site.<\/strong>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Snippet",
-            "sub_fields": [
-                {
-                    "key": "field_5e6870d10a4d5",
-                    "label": "",
-                    "name": "head_snippet",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5e6871f795bc5",
-            "label": "Body Snippets",
-            "name": "analytics_body_snippets",
-            "type": "repeater",
-            "instructions": "Add analytic-related snippets here. <strong>These snippets are pasted immediately after the opening `&lt;body&gt;` tag and fire off on every page of the site.<\/strong>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Snippet",
-            "sub_fields": [
-                {
-                    "key": "field_5e6871f795bc6",
-                    "label": "",
-                    "name": "body_snippet",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
-                }
-            ]
-        },
-        {
             "key": "field_5eab935c91bc9",
             "label": "Page IDs",
             "name": "",
@@ -383,7 +287,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1599190534
+    "modified": 1600832548
 }
