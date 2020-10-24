@@ -7,37 +7,88 @@
 /************* Internal variables ************/
 
 /************* General styles ************/
-.blurb {
-  @include container((width: 1120px));
-  margin-top: em(50);
+.buy__wrap {
+  @include container((width: 1280px));
+  padding-top: em(40);
+  padding-bottom: em(40);
 
-  @include min-width($_tablet-960px-breakpoint) {
-    margin-top: em(80);
+  @include min-width($_tablet-800px-breakpoint) {
+    padding-top: em(60);
+    padding-bottom: em(60);
   }
 }
 
-.buy {
-  padding-bottom: em(50);
+.buy__title {
+  font-size: em($font-size-h3);
+  letter-spacing: em(2, $font-size-h3);
+  margin-bottom: em(25, $font-size-h3);
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold;
 
-  @include min-width($_tablet-960px-breakpoint) {
-    padding-bottom: em(80);
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-h1);
+    letter-spacing: em(2, $font-size-h1);
+    margin-bottom: em(50, $font-size-h1);
   }
 }
 
-.buy__table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 80%;
-  margin: 0 auto;
+.buy__desc {
+  @include min-width($_tablet-800px-breakpoint) {
+    font-size: em($font-size-base--desktop);
+  }
+
+  p {
+    margin-bottom: em(20, $font-size-base);
+
+    @include min-width($_tablet-800px-breakpoint) {
+      margin-bottom: em(20, $font-size-base--desktop);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    @include transition((properties: (color)));
+    color: c(red, dark);
+
+    &:hover {
+      @include transition((properties: (color)));
+      color: c(red);
+    }
+  }
 }
 
-.buy__table-title,
-.buy__table-data {
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 8px;
-}
+.buy__locator {
+  margin-top: 30px;
 
-.buy__table-data {
-  width: 25%;
+  @include min-width($_tablet-960px-breakpoint) {
+    margin-top: 50px;
+  }
+
+  // locator overrides
+  .wpsl-search {
+    background-color: unset;
+  }
+
+  #wpsl-search-btn {
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-size: em($font-size-button, $font-size-base);
+    letter-spacing: 1px;
+    text-transform: uppercase !important;
+    padding: 12px 20px;
+    background: c(red, dark);
+    color: c(white);
+    border: none;
+  }
+
+  #wpsl-stores {
+    li {
+      background-color: c(red);
+      border-bottom: 2px solid c(white) !important;
+      padding-left: 10px !important;
+    }
+  }
 }

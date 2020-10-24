@@ -157,6 +157,7 @@ add_filter('use_block_editor_for_post_type', function ($can_edit, $post_type) {
         'views/archive-recipe.blade.php',
         'views/archive-product.blade.php',
         'views/front-page.blade.php',
+        'views/page-buy.blade.php',
     ];
 
     if (empty($post_id)) {
