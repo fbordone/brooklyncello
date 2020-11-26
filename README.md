@@ -1,6 +1,6 @@
 # Brooklyncello
 
-A website for an up-and-coming brand based in Brooklyn and created by Brooklynites.
+A website for an up-and-coming brand based in Brooklyn and created by Brooklynites. See at https://brooklyncello.com/
 
 ## Theme Information
 
